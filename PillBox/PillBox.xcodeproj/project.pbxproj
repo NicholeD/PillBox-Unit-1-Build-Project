@@ -56,6 +56,7 @@
 		15F47F4B240DAF5B006A7D21 /* PillBox */ = {
 			isa = PBXGroup;
 			children = (
+				FED0521A240DBCC50099AE91 /* Profile Model.swift */,
 				15F47F61240DAF73006A7D21 /* Storyboards */,
 				15F47F60240DAF67006A7D21 /* Resources */,
 				15F47F5A240DAF5B006A7D21 /* Info.plist */,
@@ -77,7 +78,6 @@
 			isa = PBXGroup;
 			children = (
 				15F47F52240DAF5B006A7D21 /* Main.storyboard */,
-				FED0521A240DBCC50099AE91 /* Profile Model.swift */,
 				15F47F57240DAF5B006A7D21 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
