@@ -89,13 +89,13 @@
 			isa = PBXGroup;
 			children = (
 				15F47F52240DAF5B006A7D21 /* Main.storyboard */,
+				FED0521A240DBCC50099AE91 /* Profile Model.swift */,
 				FECC73ED240DC6A6002A1CAC /* Profile Model Controller.swift */,
 				FECC73EF240DC6D0002A1CAC /* Prescription Model.swift */,
 				FECC73F1240DC6E8002A1CAC /* Prescription Model Controller.swift */,
 				FECC73F3240DC6FA002A1CAC /* AddProfileViewController.swift */,
 				FECC73F5240DC709002A1CAC /* Presctiption ViewController.swift */,
 				FECC73F7240DC71B002A1CAC /* AddPresctiption ViewController.swift */,
-				FED0521A240DBCC50099AE91 /* Profile Model.swift */,
 				15F47F57240DAF5B006A7D21 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
