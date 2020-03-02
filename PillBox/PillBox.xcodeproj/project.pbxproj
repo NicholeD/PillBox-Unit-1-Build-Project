@@ -69,6 +69,9 @@
 			isa = PBXGroup;
 			children = (
 				15F47F61240DAF73006A7D21 /* Storyboards */,
+				FECC73FD240DCB2E002A1CAC /* Model */,
+				FECC73FE240DCB42002A1CAC /* Model Controller */,
+				FECC73FF240DCB53002A1CAC /* View Controllers */,
 				15F47F60240DAF67006A7D21 /* Resources */,
 				15F47F5A240DAF5B006A7D21 /* Info.plist */,
 			);
@@ -90,9 +93,6 @@
 			children = (
 				15F47F52240DAF5B006A7D21 /* Main.storyboard */,
 				15F47F57240DAF5B006A7D21 /* LaunchScreen.storyboard */,
-				FECC73FD240DCB2E002A1CAC /* Model */,
-				FECC73FE240DCB42002A1CAC /* Model Controller */,
-				FECC73FF240DCB53002A1CAC /* View Controllers */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
