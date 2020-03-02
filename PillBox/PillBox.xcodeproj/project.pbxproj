@@ -12,6 +12,12 @@
 		15F47F54240DAF5B006A7D21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15F47F52240DAF5B006A7D21 /* Main.storyboard */; };
 		15F47F56240DAF5B006A7D21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15F47F55240DAF5B006A7D21 /* Assets.xcassets */; };
 		15F47F59240DAF5B006A7D21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15F47F57240DAF5B006A7D21 /* LaunchScreen.storyboard */; };
+		FECC73EE240DC6A6002A1CAC /* Profile Model Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = FECC73ED240DC6A6002A1CAC /* Profile Model Controller.swift */; };
+		FECC73F0240DC6D0002A1CAC /* Prescription Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = FECC73EF240DC6D0002A1CAC /* Prescription Model.swift */; };
+		FECC73F2240DC6E8002A1CAC /* Prescription Model Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = FECC73F1240DC6E8002A1CAC /* Prescription Model Controller.swift */; };
+		FECC73F4240DC6FA002A1CAC /* AddProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FECC73F3240DC6FA002A1CAC /* AddProfileViewController.swift */; };
+		FECC73F6240DC709002A1CAC /* Presctiption ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FECC73F5240DC709002A1CAC /* Presctiption ViewController.swift */; };
+		FECC73F8240DC71B002A1CAC /* AddPresctiption ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FECC73F7240DC71B002A1CAC /* AddPresctiption ViewController.swift */; };
 		FED0521B240DBCC50099AE91 /* Profile Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED0521A240DBCC50099AE91 /* Profile Model.swift */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +29,12 @@
 		15F47F55240DAF5B006A7D21 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		15F47F58240DAF5B006A7D21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		15F47F5A240DAF5B006A7D21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FECC73ED240DC6A6002A1CAC /* Profile Model Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Profile Model Controller.swift"; sourceTree = "<group>"; };
+		FECC73EF240DC6D0002A1CAC /* Prescription Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Prescription Model.swift"; sourceTree = "<group>"; };
+		FECC73F1240DC6E8002A1CAC /* Prescription Model Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Prescription Model Controller.swift"; sourceTree = "<group>"; };
+		FECC73F3240DC6FA002A1CAC /* AddProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProfileViewController.swift; sourceTree = "<group>"; };
+		FECC73F5240DC709002A1CAC /* Presctiption ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Presctiption ViewController.swift"; sourceTree = "<group>"; };
+		FECC73F7240DC71B002A1CAC /* AddPresctiption ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddPresctiption ViewController.swift"; sourceTree = "<group>"; };
 		FED0521A240DBCC50099AE91 /* Profile Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Profile Model.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -77,6 +89,12 @@
 			isa = PBXGroup;
 			children = (
 				15F47F52240DAF5B006A7D21 /* Main.storyboard */,
+				FECC73ED240DC6A6002A1CAC /* Profile Model Controller.swift */,
+				FECC73EF240DC6D0002A1CAC /* Prescription Model.swift */,
+				FECC73F1240DC6E8002A1CAC /* Prescription Model Controller.swift */,
+				FECC73F3240DC6FA002A1CAC /* AddProfileViewController.swift */,
+				FECC73F5240DC709002A1CAC /* Presctiption ViewController.swift */,
+				FECC73F7240DC71B002A1CAC /* AddPresctiption ViewController.swift */,
 				FED0521A240DBCC50099AE91 /* Profile Model.swift */,
 				15F47F57240DAF5B006A7D21 /* LaunchScreen.storyboard */,
 			);
@@ -156,7 +174,13 @@
 			files = (
 				15F47F4D240DAF5B006A7D21 /* AppDelegate.swift in Sources */,
 				15F47F4F240DAF5B006A7D21 /* SceneDelegate.swift in Sources */,
+				FECC73F8240DC71B002A1CAC /* AddPresctiption ViewController.swift in Sources */,
 				FED0521B240DBCC50099AE91 /* Profile Model.swift in Sources */,
+				FECC73F4240DC6FA002A1CAC /* AddProfileViewController.swift in Sources */,
+				FECC73F0240DC6D0002A1CAC /* Prescription Model.swift in Sources */,
+				FECC73F6240DC709002A1CAC /* Presctiption ViewController.swift in Sources */,
+				FECC73EE240DC6A6002A1CAC /* Profile Model Controller.swift in Sources */,
+				FECC73F2240DC6E8002A1CAC /* Prescription Model Controller.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
