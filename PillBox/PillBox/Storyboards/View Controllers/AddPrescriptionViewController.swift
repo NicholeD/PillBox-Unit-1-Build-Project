@@ -1,5 +1,5 @@
 //
-//  Presctiption ViewController.swift
+//  AddPrescriptionViewController.swift
 //  PillBox
 //
 //  Created by Harmony Radley on 3/2/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Presctiption_ViewController: UIViewController {
+class AddPrescriptionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
