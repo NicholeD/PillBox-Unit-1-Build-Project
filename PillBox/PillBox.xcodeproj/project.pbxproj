@@ -7,15 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		15322B3F240EC31400F1E27A /* Profile Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15322B35240EC31400F1E27A /* Profile Model.swift */; };
+		15322B40240EC31400F1E27A /* Prescription Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15322B36240EC31400F1E27A /* Prescription Model.swift */; };
+		15322B41240EC31400F1E27A /* Prescription Model Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15322B38240EC31400F1E27A /* Prescription Model Controller.swift */; };
+		15322B42240EC31400F1E27A /* Profile Model Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15322B39240EC31400F1E27A /* Profile Model Controller.swift */; };
+		15322B43240EC31400F1E27A /* AddProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15322B3B240EC31400F1E27A /* AddProfileViewController.swift */; };
+		15322B44240EC31400F1E27A /* PrescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15322B3C240EC31400F1E27A /* PrescriptionViewController.swift */; };
+		15322B45240EC31400F1E27A /* Prescription Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15322B3D240EC31400F1E27A /* Prescription Model.swift */; };
+		15322B46240EC31400F1E27A /* AddPrescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15322B3E240EC31400F1E27A /* AddPrescriptionViewController.swift */; };
 		15F47F4D240DAF5B006A7D21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F47F4C240DAF5B006A7D21 /* AppDelegate.swift */; };
 		15F47F4F240DAF5B006A7D21 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F47F4E240DAF5B006A7D21 /* SceneDelegate.swift */; };
 		15F47F54240DAF5B006A7D21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15F47F52240DAF5B006A7D21 /* Main.storyboard */; };
 		15F47F56240DAF5B006A7D21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15F47F55240DAF5B006A7D21 /* Assets.xcassets */; };
 		15F47F59240DAF5B006A7D21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15F47F57240DAF5B006A7D21 /* LaunchScreen.storyboard */; };
-		FED0521B240DBCC50099AE91 /* Profile Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED0521A240DBCC50099AE91 /* Profile Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		15322B35240EC31400F1E27A /* Profile Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Profile Model.swift"; sourceTree = "<group>"; };
+		15322B36240EC31400F1E27A /* Prescription Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Prescription Model.swift"; sourceTree = "<group>"; };
+		15322B38240EC31400F1E27A /* Prescription Model Controller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Prescription Model Controller.swift"; sourceTree = "<group>"; };
+		15322B39240EC31400F1E27A /* Profile Model Controller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Profile Model Controller.swift"; sourceTree = "<group>"; };
+		15322B3B240EC31400F1E27A /* AddProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddProfileViewController.swift; sourceTree = "<group>"; };
+		15322B3C240EC31400F1E27A /* PrescriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrescriptionViewController.swift; sourceTree = "<group>"; };
+		15322B3D240EC31400F1E27A /* Prescription Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Prescription Model.swift"; sourceTree = "<group>"; };
+		15322B3E240EC31400F1E27A /* AddPrescriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPrescriptionViewController.swift; sourceTree = "<group>"; };
 		15F47F49240DAF5B006A7D21 /* PillBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PillBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15F47F4C240DAF5B006A7D21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		15F47F4E240DAF5B006A7D21 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -23,7 +38,6 @@
 		15F47F55240DAF5B006A7D21 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		15F47F58240DAF5B006A7D21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		15F47F5A240DAF5B006A7D21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FED0521A240DBCC50099AE91 /* Profile Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Profile Model.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +51,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		15322B34240EC31400F1E27A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				15322B35240EC31400F1E27A /* Profile Model.swift */,
+				15322B36240EC31400F1E27A /* Prescription Model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		15322B37240EC31400F1E27A /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+				15322B38240EC31400F1E27A /* Prescription Model Controller.swift */,
+				15322B39240EC31400F1E27A /* Profile Model Controller.swift */,
+			);
+			path = "Model Controller";
+			sourceTree = "<group>";
+		};
+		15322B3A240EC31400F1E27A /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				15322B3B240EC31400F1E27A /* AddProfileViewController.swift */,
+				15322B3C240EC31400F1E27A /* PrescriptionViewController.swift */,
+				15322B3D240EC31400F1E27A /* Prescription Model.swift */,
+				15322B3E240EC31400F1E27A /* AddPrescriptionViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
 		15F47F40240DAF5B006A7D21 = {
 			isa = PBXGroup;
 			children = (
@@ -56,8 +99,10 @@
 		15F47F4B240DAF5B006A7D21 /* PillBox */ = {
 			isa = PBXGroup;
 			children = (
-				FED0521A240DBCC50099AE91 /* Profile Model.swift */,
 				15F47F61240DAF73006A7D21 /* Storyboards */,
+				15322B34240EC31400F1E27A /* Model */,
+				15322B37240EC31400F1E27A /* Model Controller */,
+				15322B3A240EC31400F1E27A /* View Controllers */,
 				15F47F60240DAF67006A7D21 /* Resources */,
 				15F47F5A240DAF5B006A7D21 /* Info.plist */,
 			);
@@ -154,9 +199,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15322B40240EC31400F1E27A /* Prescription Model.swift in Sources */,
 				15F47F4D240DAF5B006A7D21 /* AppDelegate.swift in Sources */,
 				15F47F4F240DAF5B006A7D21 /* SceneDelegate.swift in Sources */,
-				FED0521B240DBCC50099AE91 /* Profile Model.swift in Sources */,
+				15322B44240EC31400F1E27A /* PrescriptionViewController.swift in Sources */,
+				15322B45240EC31400F1E27A /* Prescription Model.swift in Sources */,
+				15322B41240EC31400F1E27A /* Prescription Model Controller.swift in Sources */,
+				15322B3F240EC31400F1E27A /* Profile Model.swift in Sources */,
+				15322B43240EC31400F1E27A /* AddProfileViewController.swift in Sources */,
+				15322B42240EC31400F1E27A /* Profile Model Controller.swift in Sources */,
+				15322B46240EC31400F1E27A /* AddPrescriptionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
