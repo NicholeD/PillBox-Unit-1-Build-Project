@@ -41,14 +41,37 @@
                     <view key="view" contentMode="scaleToFill" id="90W-ur-9Ir">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="82" translatesAutoresizingMaskIntoConstraints="NO" id="Rq1-RU-e3h">
+                                <rect key="frame" x="89" y="432.5" width="236.5" height="31"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dark Mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="910-JR-btO">
+                                        <rect key="frame" x="0.0" y="0.0" width="105.5" height="31"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XlF-fd-c0D">
+                                        <rect key="frame" x="187.5" y="0.0" width="51" height="31"/>
+                                    </switch>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                        <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <constraints>
+                            <constraint firstItem="Rq1-RU-e3h" firstAttribute="centerX" secondItem="90W-ur-9Ir" secondAttribute="centerX" id="F16-3l-IhQ"/>
+                            <constraint firstItem="Rq1-RU-e3h" firstAttribute="centerY" secondItem="90W-ur-9Ir" secondAttribute="centerY" id="d6o-zc-wAM"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="5hf-2X-AVV"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Settings" id="u8w-D9-Xgf"/>
+                    <navigationItem key="navigationItem" title="Settings" id="u8w-D9-Xgf">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="Oyb-Ei-uUM"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NgJ-h1-4mD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1475" y="-290"/>
+            <point key="canvasLocation" x="1473.913043478261" y="-290.625"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="u74-Mc-ECO">

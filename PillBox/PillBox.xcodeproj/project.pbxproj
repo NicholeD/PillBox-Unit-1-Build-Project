@@ -20,6 +20,8 @@
 		15F47F59240DAF5B006A7D21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15F47F57240DAF5B006A7D21 /* LaunchScreen.storyboard */; };
 		FECC73EE240DC6A6002A1CAC /* Profile Model Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = FECC73ED240DC6A6002A1CAC /* Profile Model Controller.swift */; };
 		FECC73F2240DC6E8002A1CAC /* Prescription Model Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = FECC73F1240DC6E8002A1CAC /* Prescription Model Controller.swift */; };
+		FED7EEAB240F11C4008C0E5E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED7EEAA240F11C4008C0E5E /* SettingsViewController.swift */; };
+		FED7EEAF240F1326008C0E5E /* DarkModeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED7EEAE240F1326008C0E5E /* DarkModeHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		15F47F5A240DAF5B006A7D21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FECC73ED240DC6A6002A1CAC /* Profile Model Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Profile Model Controller.swift"; sourceTree = "<group>"; };
 		FECC73F1240DC6E8002A1CAC /* Prescription Model Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Prescription Model Controller.swift"; sourceTree = "<group>"; };
+		FED7EEAA240F11C4008C0E5E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		FED7EEAE240F1326008C0E5E /* DarkModeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,7 @@
 		15F47F40240DAF5B006A7D21 = {
 			isa = PBXGroup;
 			children = (
+				FED7EEAE240F1326008C0E5E /* DarkModeHelper.swift */,
 				152E63FB240ED75100210D0A /* Model */,
 				15F47F4B240DAF5B006A7D21 /* PillBox */,
 				15F47F4A240DAF5B006A7D21 /* Products */,
@@ -92,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				15F47F52240DAF5B006A7D21 /* Main.storyboard */,
+				FED7EEAA240F11C4008C0E5E /* SettingsViewController.swift */,
 				15F47F57240DAF5B006A7D21 /* LaunchScreen.storyboard */,
 				15322B3A240EC31400F1E27A /* View Controllers */,
 				FECC73FE240DCB42002A1CAC /* Model Controller */,
@@ -193,9 +199,11 @@
 			files = (
 				15F47F4D240DAF5B006A7D21 /* AppDelegate.swift in Sources */,
 				152E63FD240ED78200210D0A /* PerscriptionModel.swift in Sources */,
+				FED7EEAB240F11C4008C0E5E /* SettingsViewController.swift in Sources */,
 				15F47F4F240DAF5B006A7D21 /* SceneDelegate.swift in Sources */,
 				15322B44240EC31400F1E27A /* PrescriptionViewController.swift in Sources */,
 				15322B45240EC31400F1E27A /* Prescription Model.swift in Sources */,
+				FED7EEAF240F1326008C0E5E /* DarkModeHelper.swift in Sources */,
 				152E63FF240ED79200210D0A /* ProfileModel.swift in Sources */,
 				15322B43240EC31400F1E27A /* AddProfileViewController.swift in Sources */,
 				15322B46240EC31400F1E27A /* AddPrescriptionViewController.swift in Sources */,
