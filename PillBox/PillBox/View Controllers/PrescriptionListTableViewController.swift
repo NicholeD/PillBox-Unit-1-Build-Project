@@ -7,19 +7,17 @@
 //
 
 import UIKit
+protocol PrescriptionAddedDelegate {
+    func prescriptionWasAdded(_ prescription: Prescription)
+}
 
 class PrescriptionListTableViewController: UITableView {
 
-    @IBOutlet weak var prescriptionNameLabel: UILabel!
+    @IBOutlet weak var tableView: PrescriptionListTableViewController!
     
-    @IBOutlet weak var dateLabel: UILabel!
-    
-    var 
     
   
 
-    @IBAction func prescriptionTakenBox(_ sender: Any) {
-    }
     
     
 }

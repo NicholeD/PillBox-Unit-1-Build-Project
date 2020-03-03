@@ -8,15 +8,21 @@
 
 import Foundation
 
-class Prescription {
+class Prescription: Codable {
     
     var name: String
     var dosage: String
     var frequency: String
     var am: Bool
     var pm: Bool
+    var notes: String?
     
-    init(name: String) {
+    init(name: String, dosage: String, frequency: String, am: Bool = false, pm: Bool = false, notes: String?) {
         self.name = name
+        self.dosage = dosage
+        self.frequency = frequency
+        self.am = am
+        self.pm = pm
+        self.notes = notes
     }
 }
