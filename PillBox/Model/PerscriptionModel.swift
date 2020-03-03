@@ -1,8 +1,8 @@
 //
-//  Prescription Model.swift
+//  PerscriptionModel.swift
 //  PillBox
 //
-//  Created by Harmony Radley on 3/2/20.
+//  Created by Nichole Davidson on 3/3/20.
 //  Copyright © 2020 Nichole Davidson. All rights reserved.
 //
 
