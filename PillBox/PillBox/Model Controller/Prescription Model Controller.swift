@@ -7,3 +7,19 @@
 //
 
 import Foundation
+
+class PrescriptionController {
+    
+    var prescriptions: [Prescription] = []
+    
+    fun addPrescriptionTapped(with name: String, dosage: String, frequency: String, am: Bool = false, pm: Bool = false, notes: String) {
+        
+        let newPrescription = Prescription(name: name, dosage: dosage, frequency: frequency, am: am, pm: pm, notes: notes)
+        prescriptions.append(newPrescription)
+    }
+    
+    
+}
+
+
+
