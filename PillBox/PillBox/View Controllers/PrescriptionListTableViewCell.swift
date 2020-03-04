@@ -14,6 +14,11 @@ class PrescriptionListTableViewCell: UITableViewCell {
     @IBOutlet weak var prescriptionNameLabel: UILabel!
     @IBOutlet weak var prescriptionTakenDate: UILabel!
     
+    
+    var prescriptionController: PrescriptionController?
+    var prescription: Prescription?
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

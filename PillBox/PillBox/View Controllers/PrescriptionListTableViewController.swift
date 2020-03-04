@@ -15,7 +15,29 @@ class PrescriptionListTableViewController: UITableView {
 
     @IBOutlet weak var tableView: PrescriptionListTableViewController!
     
+    var prescriptionController: PrescriptionController?
+    var prescription: Prescription?
     
+    
+    
+    
+    
+    // MARK: - Table view data source
+       
+       func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+               guard let prescriptionController = prescriptionController else { return 0}
+               return prescriptionController.prescriptions.count
+       }
+
+      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+               guard let cell = tableView.dequeueReusableCell(withIdentifier: "PrescriptionCell", for: indexPath) as? PrescriptionListTableViewCell,
+                   let prescriptionController = prescriptionController else { return UITableViewCell()}
+
+               let prescriptionsOnList = prescriptionController.prescriptions[indexPath.row]
+               cell.prescription = prescriptionsOnList
+       
+               return cell
+           }
   
 
     
