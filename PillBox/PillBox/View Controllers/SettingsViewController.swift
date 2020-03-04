@@ -28,6 +28,17 @@ class SettingsViewController: UIViewController {
         
     }
     
+    
+    func setTheme() {
+        guard let themeHelper = themeHelper?.themePreference else { return }
+         if themeHelper == "Dark" {
+           view.backgroundColor = .darkGray
+         } else {
+           view.backgroundColor = .none
+         }
+     }
+    
+    
     var themeHelper: ThemeHelper?
 }
 // pass theme through each segue 
