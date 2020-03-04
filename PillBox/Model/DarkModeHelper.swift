@@ -9,6 +9,7 @@ import UIKit
 
 class ThemeHelper {
     
+        
     func setThemePreferenceToDark() {
         UserDefaults.standard.set("Dark", forKey: themePreferenceKey)
     }
@@ -17,11 +18,14 @@ class ThemeHelper {
         return UserDefaults.standard.string(forKey: themePreferenceKey)
     }
     
+    
+    
     init() {
         guard themePreference == nil else { return }
         setThemePreferenceToDark()
     
         }
+    
     private let themePreferenceKey = "themePreference"
 
 }

@@ -60,6 +60,7 @@
 			children = (
 				152E63FC240ED78200210D0A /* PerscriptionModel.swift */,
 				152E63FE240ED79200210D0A /* ProfileModel.swift */,
+				FED7EEAE240F1326008C0E5E /* DarkModeHelper.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -71,6 +72,7 @@
 				15322B3C240EC31400F1E27A /* PrescriptionViewController.swift */,
 				15322B3D240EC31400F1E27A /* Prescription Model.swift */,
 				15322B3E240EC31400F1E27A /* AddPrescriptionViewController.swift */,
+				FED7EEAA240F11C4008C0E5E /* SettingsViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -78,7 +80,6 @@
 		15F47F40240DAF5B006A7D21 = {
 			isa = PBXGroup;
 			children = (
-				FED7EEAE240F1326008C0E5E /* DarkModeHelper.swift */,
 				152E63FB240ED75100210D0A /* Model */,
 				15F47F4B240DAF5B006A7D21 /* PillBox */,
 				15F47F4A240DAF5B006A7D21 /* Products */,
@@ -97,7 +98,6 @@
 			isa = PBXGroup;
 			children = (
 				15F47F52240DAF5B006A7D21 /* Main.storyboard */,
-				FED7EEAA240F11C4008C0E5E /* SettingsViewController.swift */,
 				15F47F57240DAF5B006A7D21 /* LaunchScreen.storyboard */,
 				15322B3A240EC31400F1E27A /* View Controllers */,
 				FECC73FE240DCB42002A1CAC /* Model Controller */,

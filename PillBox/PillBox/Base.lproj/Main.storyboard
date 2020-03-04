@@ -37,7 +37,7 @@
         <!--Settings-->
         <scene sceneID="H4o-Si-MtP">
             <objects>
-                <viewController id="DQP-Ea-raw" sceneMemberID="viewController">
+                <viewController id="DQP-Ea-raw" customClass="SettingsViewController" customModule="PillBox" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="90W-ur-9Ir">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -51,8 +51,12 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XlF-fd-c0D">
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="XlF-fd-c0D">
                                         <rect key="frame" x="187.5" y="0.0" width="51" height="31"/>
+                                        <color key="thumbTintColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                        <connections>
+                                            <action selector="darkMode:" destination="DQP-Ea-raw" eventType="valueChanged" id="zxe-uC-pT6"/>
+                                        </connections>
                                     </switch>
                                 </subviews>
                             </stackView>

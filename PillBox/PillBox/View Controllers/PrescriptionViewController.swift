@@ -10,13 +10,26 @@ import UIKit
 
 class PrescriptionViewController: UIViewController {
 
+    let themeHelper = ThemeHelper()
+    
+        
+  
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setTheme()
+    }
+    // pass into each viewcontroller
+    func setTheme() {
+        guard let themeHelper = themeHelper.themePreference  else { return }
+        if themeHelper == "Dark" {
+            view.backgroundColor = .darkGray
+        } else {
+            view.backgroundColor = .none
+        }
+        
+        
     }
     
-
     /*
     // MARK: - Navigation
 

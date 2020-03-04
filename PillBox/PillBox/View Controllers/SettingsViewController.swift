@@ -17,14 +17,17 @@ class SettingsViewController: UIViewController {
     }
     
 
-    func IBActionDarkMode(_ sender: UISwitch) {
+    @IBAction func darkMode(_ sender: UISwitch) {
         if (sender.isOn == true) {
             themeHelper?.setThemePreferenceToDark()
             dismiss(animated: true, completion: nil)
+        } else if sender.isOn == false {
+            themeHelper?.setThemePreferenceToDark()
         }
-       
+    
         
     }
     
     var themeHelper: ThemeHelper?
 }
+// pass theme through each segue 
