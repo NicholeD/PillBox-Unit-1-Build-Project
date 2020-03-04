@@ -13,13 +13,33 @@ protocol PrescriptionAddedDelegate {
 
 class AddPrescriptionViewController: UIViewController {
 
+    @IBOutlet weak var prescriptionNameTextField: UITextField!
+    @IBOutlet weak var dosageTextField: UITextField!
+    @IBOutlet weak var frequencyTextField: UITextField!
+    @IBOutlet weak var toggleAmSwitch: UISwitch!
+    @IBOutlet weak var togglePmSwitch: UISwitch!
+    
+    @IBOutlet weak var notesTextView: UITextView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
+      // Toggle action will show in the alert or in the prescription detail view... not sure yet
+    
+    @IBAction func toggleAm(_ sender: UISwitch) {
+    }
+    
+    @IBAction func togglePm(_ sender: UISwitch) {
+    }
+    
 
+    @IBAction func addPrescriptionTapped(_ sender: Any) {
+    }
+    
     /*
     // MARK: - Navigation
 

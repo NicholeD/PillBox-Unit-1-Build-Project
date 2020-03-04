@@ -13,7 +13,6 @@ protocol PrescriptionListTableViewCellDelegate {
 }
 
 class PrescriptionListTableViewCell: UITableViewCell {
-
     
     @IBOutlet weak var prescriptionNameLabel: UILabel!
     @IBOutlet weak var prescriptionTakenDate: UILabel!
@@ -63,5 +62,17 @@ class PrescriptionListTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
+    func textFieldShouldReturn(_ textField: UILabel) -> Bool {
+    if let text = textField.text,
+        !text.isEmpty {
+        switch textField {
+        case prescriptionNameLabel:
+            textField.resignFirstResponder()
+        default:
+            textField.resignFirstResponder()
+        }
+    }
+        return false
+   }
 }

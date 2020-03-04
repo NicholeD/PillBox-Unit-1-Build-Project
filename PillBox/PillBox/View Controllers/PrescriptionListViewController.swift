@@ -9,30 +9,35 @@
 import UIKit
 
 
-class PrescriptionListViewController: UIViewController, UITableViewDataSource {
+class PrescriptionListViewController: UIViewController {
 
-    @IBOutlet weak var tableView: PrescriptionListTableViewController!
+    @IBOutlet weak var profileName: UILabel!
+    @IBOutlet weak var tableView: UITableView!
     
     var prescriptionController: PrescriptionController?
     var prescription: Prescription?
+    var profile: Profile?
+    let themeHelper = ThemeHelper()
+
+    override func viewDidLoad() {
+      super.viewDidLoad()
+      setTheme()
+      updateViews()
+    }
+    // pass into each viewcontroller
+    func setTheme() {
+      guard let themeHelper = themeHelper.themePreference else { return }
+      if themeHelper == "Dark" {
+        view.backgroundColor = .darkGray
+      } else {
+        view.backgroundColor = .none
+      }
+  }
     
-//    let themeHelper = ThemeHelper()
-//
-//    override func viewDidLoad() {
-//      super.viewDidLoad()
-//      setTheme()
-//    }
-//    // pass into each viewcontroller
-//    func setTheme() {
-//      guard let themeHelper = themeHelper.themePreference else { return }
-//      if themeHelper == "Dark" {
-//        view.backgroundColor = .darkGray
-//      } else {
-//        view.backgroundColor = .none
-//      }
-           
-   
-    
+    func updateViews() {
+               guard let profile = profile else { return }
+               profileName.text = profile.name
+    }
     // MARK: - Table view data source
        
        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -49,8 +54,7 @@ class PrescriptionListViewController: UIViewController, UITableViewDataSource {
        
                return cell
            }
-  
+  }
+    
+    
 
-    
-    
-}
