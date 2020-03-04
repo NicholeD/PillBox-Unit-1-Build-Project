@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View-->
+        <!--Prescription List View Controller-->
         <scene sceneID="FZd-z6-BW0">
             <objects>
                 <viewController id="v6Y-ox-DKE" customClass="PrescriptionListViewController" customModule="PillBox" customModuleProvider="target" sceneMemberID="viewController">
@@ -56,6 +56,7 @@
                                                     <connections>
                                                         <action selector="prescriptionTakenBox:" destination="swJ-sO-0w0" eventType="touchUpInside" id="gyX-Kk-D9d"/>
                                                         <action selector="prescriptionTakenBox:" destination="v6Y-ox-DKE" eventType="touchUpInside" id="jmK-mu-UJb"/>
+                                                        <action selector="prescriptionTakenBoxTapped:" destination="swJ-sO-0w0" eventType="touchUpInside" id="zgz-h0-MYJ"/>
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bs1-hg-stX">
@@ -87,11 +88,6 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="v6Y-ox-DKE" id="MpP-gY-sjK"/>
-                                    <outlet property="delegate" destination="v6Y-ox-DKE" id="2hk-lE-OdK"/>
-                                    <outlet property="tableView" destination="v6Y-ox-DKE" id="Vyp-23-uuN"/>
-                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -122,6 +118,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="profileName" destination="yLd-Wd-duQ" id="Kxd-PX-3Ss"/>
                         <outlet property="tableView" destination="YV8-8B-rJN" id="fDQ-qU-caf"/>
                     </connections>
                 </viewController>
@@ -132,45 +129,18 @@
         <!--Settings-->
         <scene sceneID="H4o-Si-MtP">
             <objects>
-                <viewController id="DQP-Ea-raw" customClass="SettingsViewController" customModule="PillBox" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="DQP-Ea-raw" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="90W-ur-9Ir">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="82" translatesAutoresizingMaskIntoConstraints="NO" id="Rq1-RU-e3h">
-                                <rect key="frame" x="89" y="432.5" width="236.5" height="31"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dark Mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="910-JR-btO">
-                                        <rect key="frame" x="0.0" y="0.0" width="105.5" height="31"/>
-                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="XlF-fd-c0D">
-                                        <rect key="frame" x="187.5" y="0.0" width="51" height="31"/>
-                                        <color key="thumbTintColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                                        <connections>
-                                            <action selector="darkMode:" destination="DQP-Ea-raw" eventType="valueChanged" id="zxe-uC-pT6"/>
-                                        </connections>
-                                    </switch>
-                                </subviews>
-                            </stackView>
-                        </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
-                        <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <constraints>
-                            <constraint firstItem="Rq1-RU-e3h" firstAttribute="centerX" secondItem="90W-ur-9Ir" secondAttribute="centerX" id="F16-3l-IhQ"/>
-                            <constraint firstItem="Rq1-RU-e3h" firstAttribute="centerY" secondItem="90W-ur-9Ir" secondAttribute="centerY" id="d6o-zc-wAM"/>
-                        </constraints>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="5hf-2X-AVV"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Settings" id="u8w-D9-Xgf">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="Oyb-Ei-uUM"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Settings" id="u8w-D9-Xgf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NgJ-h1-4mD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1473.913043478261" y="-290.625"/>
+            <point key="canvasLocation" x="1475" y="-290"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="u74-Mc-ECO">
@@ -190,7 +160,7 @@
         <!--Add Prescription-->
         <scene sceneID="9XB-e9-sTe">
             <objects>
-                <viewController id="3fb-4T-p2M" sceneMemberID="viewController">
+                <viewController id="3fb-4T-p2M" customClass="AddPrescriptionViewController" customModule="PillBox" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="F57-CN-jBB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -250,6 +220,9 @@
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="4WK-CX-Vv0">
                                                 <rect key="frame" x="43" y="0.0" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="toggleAm:" destination="3fb-4T-p2M" eventType="valueChanged" id="OMV-uc-qYs"/>
+                                                </connections>
                                             </switch>
                                         </subviews>
                                     </stackView>
@@ -264,6 +237,9 @@
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="l6I-tc-Fzq">
                                                 <rect key="frame" x="41" y="0.0" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="togglePm:" destination="3fb-4T-p2M" eventType="valueChanged" id="9yx-HW-mQ0"/>
+                                                </connections>
                                             </switch>
                                         </subviews>
                                     </stackView>
@@ -273,6 +249,9 @@
                                 <rect key="frame" x="150" y="677" width="114" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Add Prescription"/>
+                                <connections>
+                                    <action selector="addPrescriptionTapped:" destination="3fb-4T-p2M" eventType="touchUpInside" id="L17-IU-g7G"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -293,6 +272,14 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Add Prescription" id="FIY-xP-SDG"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="dosageTextField" destination="95C-aT-Uvd" id="YyV-ap-IAo"/>
+                        <outlet property="frequencyTextField" destination="5ed-93-Aeh" id="Cfy-GS-r0c"/>
+                        <outlet property="notesTextView" destination="bG9-yh-rAS" id="aQY-aF-PvO"/>
+                        <outlet property="prescriptionNameTextField" destination="cub-AJ-SJX" id="pV5-iE-WsI"/>
+                        <outlet property="toggleAmSwitch" destination="4WK-CX-Vv0" id="TFV-tD-a1q"/>
+                        <outlet property="togglePmSwitch" destination="l6I-tc-Fzq" id="hey-e3-h2S"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FrW-tW-lWk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
