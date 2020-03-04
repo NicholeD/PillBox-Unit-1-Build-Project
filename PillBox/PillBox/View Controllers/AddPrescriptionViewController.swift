@@ -18,14 +18,12 @@ class AddPrescriptionViewController: UIViewController {
     @IBOutlet weak var frequencyTextField: UITextField!
     @IBOutlet weak var toggleAmSwitch: UISwitch!
     @IBOutlet weak var togglePmSwitch: UISwitch!
-    
     @IBOutlet weak var notesTextView: UITextView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
     
       // Toggle action will show in the alert or in the prescription detail view... not sure yet
@@ -38,6 +36,7 @@ class AddPrescriptionViewController: UIViewController {
     
 
     @IBAction func addPrescriptionTapped(_ sender: Any) {
+        
     }
     
     /*
