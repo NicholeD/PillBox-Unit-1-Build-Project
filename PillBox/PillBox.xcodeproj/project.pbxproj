@@ -70,8 +70,8 @@
 			children = (
 				152E6400240F184E00210D0A /* PrescriptionListViewController.swift */,
 				15803F1C240F1FE900619169 /* PrescriptionListTableViewCell.swift */,
-				15322B3B240EC31400F1E27A /* AddProfileViewController.swift */,
 				15322B3E240EC31400F1E27A /* AddPrescriptionViewController.swift */,
+				15322B3B240EC31400F1E27A /* AddProfileViewController.swift */,
 				15AA6498240F664500344B5E /* SettingsViewController.swift */,
 			);
 			path = "View Controllers";
