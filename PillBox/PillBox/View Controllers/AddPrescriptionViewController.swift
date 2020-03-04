@@ -35,22 +35,16 @@ class AddPrescriptionViewController: UIViewController {
     @IBAction func togglePm(_ sender: UISwitch) {
     }
     
-
     @IBAction func addPrescriptionTapped(_ sender: Any) {
+        guard let name = prescriptionNameTextField.text,
+            let dosage = dosageTextField.text,
+            let frequency = frequencyTextField.text,
+            let notes = notesTextView.text else { return }
+        
+         let prescription = Prescription(name: name, dosage: dosage, frequency: frequency, notes: notes)
+        
+        delegate?.prescriptionWasAdded(prescription)
+        
         navigationController?.popViewController(animated: true)
     }
-    
-
-    // MARK: - Navigation
-
-  
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "AddPrescriptionSegue" {
-            guard let viewPrescriptionVC = segue.destination as? PrescriptionListTableViewController else { return }
-               viewPrescriptionVC.prescriptionController = prescriptionController
-        }
-       
-    }
-
-
 }

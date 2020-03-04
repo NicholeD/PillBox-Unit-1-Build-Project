@@ -9,11 +9,11 @@
 import UIKit
 
 
-class PrescriptionListTableViewController: UITableViewController, PrescriptionListTableViewCellDelegate {
+class PrescriptionListTableViewController: UITableViewController, PrescriptionListTableViewCellDelegate, PrescriptionAddedDelegate {
    
-    var prescriptionController: PrescriptionController?
-    var prescriptions: [Prescription] = []
-    var prescription: Prescription?
+    var prescriptionController: PrescriptionController = PrescriptionController()
+//    var prescriptions: [Prescription] = []
+//    var prescription: Prescription?
     let themeHelper = ThemeHelper()
 
     override func viewDidLoad() {
@@ -30,31 +30,29 @@ class PrescriptionListTableViewController: UITableViewController, PrescriptionLi
         view.backgroundColor = .none
       }
   }
-    func prescriptionWasAdded(prescription: Prescription) {
-        prescriptions.append(prescription)
+    func prescriptionWasAdded(_ prescription: Prescription) {
+        prescriptionController.prescriptions.append(prescription)
         tableView.reloadData()
     }
     
     func toggleHasBeenTaken(for cell: PrescriptionListTableViewCell) {
         guard let indexPath = tableView.indexPath(for: cell) else { return }
 
-        let takenPrescription = prescriptions[indexPath.row]
+        let takenPrescription = prescriptionController.prescriptions[indexPath.row]
         takenPrescription.taken.toggle()
         tableView.reloadData()
-//        prescriptionController?.prescriptions.append(takenPrescription)
+        prescriptionController.prescriptions.append(takenPrescription)
 }
   
     
     // MARK: - Table view data source
        
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-               guard let prescriptionController = prescriptionController else { return 0}
                return prescriptionController.prescriptions.count
        }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-               guard let cell = tableView.dequeueReusableCell(withIdentifier: "PrescriptionCell", for: indexPath) as? PrescriptionListTableViewCell,
-                   let prescriptionController = prescriptionController else { fatalError("The cell's identifier is wrong or could not be cast correctly")}
+               guard let cell = tableView.dequeueReusableCell(withIdentifier: "PrescriptionCell", for: indexPath) as? PrescriptionListTableViewCell else { fatalError("The cell's identifier is wrong or could not be cast correctly")}
 
                let prescriptionsOnList = prescriptionController.prescriptions[indexPath.row]
                cell.prescription = prescriptionsOnList
@@ -67,6 +65,7 @@ class PrescriptionListTableViewController: UITableViewController, PrescriptionLi
           if segue.identifier == "AddPrescriptionSegue" {
               guard let viewPrescriptionVC = segue.destination as? AddPrescriptionViewController else { return }
              viewPrescriptionVC.prescriptionController = prescriptionController
+            viewPrescriptionVC.delegate = self
 
           }
       }
