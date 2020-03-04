@@ -27,6 +27,25 @@ class SettingsViewController: UIViewController {
             view.backgroundColor = UIColor.white
             label.textColor = UIColor.black
         }
+<<<<<<< HEAD
+=======
+    
+        
+    }
+    
+    
+    func setTheme() {
+        guard let themeHelper = themeHelper?.themePreference else { return }
+         if themeHelper == "Dark" {
+           view.backgroundColor = .darkGray
+         } else {
+           view.backgroundColor = .none
+         }
+     }
+    
+    
+    var themeHelper: ThemeHelper?
+>>>>>>> 618579173142315b958c66cfb6eaf788a1f15c3f
 }
 // pass theme through each segue 
 }
