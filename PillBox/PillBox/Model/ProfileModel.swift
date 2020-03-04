@@ -7,3 +7,19 @@
 //
 
 import Foundation
+
+class Profile {
+    
+    var name: String
+    var primaryPhysician: String?
+    var healthInsurance: String?
+    var policyNumber: String?
+    var memberID: String?
+    var emergencyContact: String?
+    var notes: String?
+    
+    init(name: String) {
+        self.name = name
+    }
+    
+}

@@ -9,8 +9,8 @@
 import UIKit
 
 
-class PrescriptionListTableViewController: UITableView, UITableViewDataSource {
-    
+class PrescriptionListViewController: UIViewController, UITableViewDataSource {
+
     @IBOutlet weak var tableView: PrescriptionListTableViewController!
     
     var prescriptionController: PrescriptionController?

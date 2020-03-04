@@ -17,7 +17,8 @@ class PrescriptionListTableViewCell: UITableViewCell {
     
     @IBOutlet weak var prescriptionNameLabel: UILabel!
     @IBOutlet weak var prescriptionTakenDate: UILabel!
-    @IBAction func prescriptionTakenBox(_ sender: Any) {
+    @IBOutlet weak var prescriptionTakenBox: UIButton!
+    @IBAction func prescriptionTakenBoxTapped(_ sender: Any) {
         delegate?.toggleHasBeenTaken(for: self)
     }
     
@@ -25,14 +26,26 @@ class PrescriptionListTableViewCell: UITableViewCell {
     var prescription: Prescription?
     var delegate: PrescriptionListTableViewCellDelegate?
     
+    func viewDidLoad() {
+        updateViews()
+    }
+    
+    func prescriptionWasAdded(_ prescription: Prescription) {
+        updateViews()
+}
     
     func updateViews() {
         guard let prescription = prescription else { return }
         
         prescriptionNameLabel.text = prescription.name
         prescriptionTakenDate.text = "\(String(describing: DateFormatter.date(dateFormatter)))"
+        
+        if prescription.taken {
+            prescriptionTakenBox.imageView?.image = UIImage(named: "checked")
+        } else {
+            prescriptionTakenBox.imageView?.image = UIImage(named: "unchecked")
+        }
     }
-   
    
        let dateFormatter: DateFormatter = {
          let formatter = DateFormatter()
@@ -40,17 +53,10 @@ class PrescriptionListTableViewCell: UITableViewCell {
          return formatter
      }()
     
-
-    
-    
-    
     override func awakeFromNib() {
         super.awakeFromNib()
 
     }
-   
-    
-
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

@@ -16,13 +16,15 @@ class Prescription: Codable {
     var am: Bool
     var pm: Bool
     var notes: String?
+    var taken: Bool
     
-    init(name: String, dosage: String, frequency: String, am: Bool = false, pm: Bool = false, notes: String?) {
+    init(name: String, dosage: String, frequency: String, am: Bool = false, pm: Bool = false, notes: String?, taken: Bool = false) {
         self.name = name
         self.dosage = dosage
         self.frequency = frequency
         self.am = am
         self.pm = pm
         self.notes = notes
+        self.taken = taken
     }
 }
