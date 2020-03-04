@@ -7,6 +7,9 @@
 //
 
 import UIKit
+protocol PrescriptionAddedDelegate {
+    func prescriptionWasAdded(_ prescription: Prescription)
+}
 
 class AddPrescriptionViewController: UIViewController {
 
