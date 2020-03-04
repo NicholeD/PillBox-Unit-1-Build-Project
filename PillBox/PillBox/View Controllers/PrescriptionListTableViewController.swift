@@ -7,20 +7,31 @@
 //
 
 import UIKit
-protocol PrescriptionAddedDelegate {
-    func prescriptionWasAdded(_ prescription: Prescription)
-}
 
-class PrescriptionListTableViewController: UITableView {
 
+class PrescriptionListTableViewController: UITableView, UITableViewDataSource {
+    
     @IBOutlet weak var tableView: PrescriptionListTableViewController!
     
     var prescriptionController: PrescriptionController?
     var prescription: Prescription?
     
-    
-    
-    
+//    let themeHelper = ThemeHelper()
+//
+//    override func viewDidLoad() {
+//      super.viewDidLoad()
+//      setTheme()
+//    }
+//    // pass into each viewcontroller
+//    func setTheme() {
+//      guard let themeHelper = themeHelper.themePreference else { return }
+//      if themeHelper == "Dark" {
+//        view.backgroundColor = .darkGray
+//      } else {
+//        view.backgroundColor = .none
+//      }
+           
+   
     
     // MARK: - Table view data source
        
