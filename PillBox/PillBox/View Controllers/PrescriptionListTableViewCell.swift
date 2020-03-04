@@ -6,7 +6,6 @@
 //  Copyright © 2020 Nichole Davidson. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 protocol PrescriptionListTableViewCellDelegate {
@@ -62,21 +61,20 @@ class PrescriptionListTableViewCell: UITableViewCell, PrescriptionAddedDelegate 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
     }
     
-//    func textFieldShouldReturn(_ textField: UILabel) -> Bool {
-//    if let text = textField.text,
-//        !text.isEmpty {
-//        switch textField {
-//        case prescriptionNameLabel:
-//            textField.resignFirstResponder()
-//        default:
-//            textField.resignFirstResponder()
-//        }
-//    }
-//        return false
-//   }
+    func textFieldShouldReturn(_ textField: UILabel) -> Bool {
+    if let text = textField.text,
+        !text.isEmpty {
+        switch textField {
+        case prescriptionNameLabel:
+            textField.resignFirstResponder()
+        default:
+            textField.resignFirstResponder()
+        }
+    }
+        return false
+   }
     
    // MARK: - Navigation
     
@@ -84,7 +82,7 @@ class PrescriptionListTableViewCell: UITableViewCell, PrescriptionAddedDelegate 
        if segue.identifier == "AddPrescriptionSegue" {
            guard let viewPrescriptionVC = segue.destination as? AddPrescriptionViewController else { return }
           viewPrescriptionVC.prescriptionController = prescriptionController
-        viewPrescriptionVC.delegate = self
+          viewPrescriptionVC.delegate = self
 
        }
    }

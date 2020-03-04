@@ -8,9 +8,9 @@
 
 import Foundation
 
-class ProfileController {
-    
-    var profile: Profile?
+//class ProfileController {
+//
+//    var profile: Profile?
     
     //TODO: build out add profile view and finish persistence code below
     
@@ -70,4 +70,4 @@ class ProfileController {
 //        }
 //    }
 //
-}
+//}
