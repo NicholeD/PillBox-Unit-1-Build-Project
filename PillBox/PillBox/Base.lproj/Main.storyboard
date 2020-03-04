@@ -72,6 +72,10 @@
                     <navigationItem key="navigationItem" title="Settings" id="u8w-D9-Xgf">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="Oyb-Ei-uUM"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="label" destination="910-JR-btO" id="pTN-4K-D7M"/>
+                        <outlet property="outletSwitch" destination="XlF-fd-c0D" id="NUR-u2-ZcN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NgJ-h1-4mD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
