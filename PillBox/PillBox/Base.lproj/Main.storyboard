@@ -36,18 +36,18 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YV8-8B-rJN" customClass="PrescriptionListTableViewController" customModule="PillBox" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="167" width="414" height="729"/>
+                                <rect key="frame" x="0.0" y="159" width="414" height="737"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PrescriptionCell" id="swJ-sO-0w0" customClass="PrescriptionListTableViewCell" customModule="PillBox" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="swJ-sO-0w0" id="DoO-IB-6mV">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tl6-Ax-aUd">
-                                                    <rect key="frame" x="20" y="11" width="42" height="21.5"/>
+                                                    <rect key="frame" x="20" y="11" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -96,7 +96,7 @@
                         <constraints>
                             <constraint firstItem="sTh-ag-z8u" firstAttribute="trailing" secondItem="yLd-Wd-duQ" secondAttribute="trailing" id="80T-GO-c4Q"/>
                             <constraint firstItem="hMv-G6-CrD" firstAttribute="leading" secondItem="sTh-ag-z8u" secondAttribute="leading" id="CHt-eA-S81"/>
-                            <constraint firstItem="YV8-8B-rJN" firstAttribute="top" secondItem="hMv-G6-CrD" secondAttribute="bottom" constant="8" symbolic="YES" id="GS9-cv-Q9f"/>
+                            <constraint firstItem="YV8-8B-rJN" firstAttribute="top" secondItem="hMv-G6-CrD" secondAttribute="bottom" id="GS9-cv-Q9f"/>
                             <constraint firstItem="YV8-8B-rJN" firstAttribute="leading" secondItem="sTh-ag-z8u" secondAttribute="leading" id="HUs-Ao-tXU"/>
                             <constraint firstItem="sTh-ag-z8u" firstAttribute="trailing" secondItem="hMv-G6-CrD" secondAttribute="trailing" id="JLD-Li-MkG"/>
                             <constraint firstItem="hMv-G6-CrD" firstAttribute="top" secondItem="yLd-Wd-duQ" secondAttribute="bottom" constant="1" id="KJn-Np-QYP"/>
@@ -115,7 +115,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="W80-o1-5H7">
                             <connections>
-                                <segue destination="3fb-4T-p2M" kind="show" id="xB2-1Z-9Pg"/>
+                                <segue destination="3fb-4T-p2M" kind="show" identifier="AddPrescriptionSegue" id="xB2-1Z-9Pg"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
