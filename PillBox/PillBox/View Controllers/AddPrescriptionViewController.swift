@@ -21,7 +21,7 @@ class AddPrescriptionViewController: UIViewController {
     @IBOutlet weak var notesTextView: UITextView!
     
     var prescriptionController: PrescriptionController?
-    
+    var delegate: PrescriptionAddedDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -46,7 +46,7 @@ class AddPrescriptionViewController: UIViewController {
   
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "AddPrescriptionSegue" {
-            guard let viewPrescriptionVC = segue.destination as? PrescriptionListViewController else { return }
+            guard let viewPrescriptionVC = segue.destination as? PrescriptionListTableViewController else { return }
                viewPrescriptionVC.prescriptionController = prescriptionController
         }
        

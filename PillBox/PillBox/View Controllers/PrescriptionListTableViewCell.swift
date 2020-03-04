@@ -6,13 +6,14 @@
 //  Copyright © 2020 Nichole Davidson. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
 protocol PrescriptionListTableViewCellDelegate {
     func toggleHasBeenTaken(for cell: PrescriptionListTableViewCell)
 }
 
-class PrescriptionListTableViewCell: UITableViewCell {
+class PrescriptionListTableViewCell: UITableViewCell, PrescriptionAddedDelegate {
     
     @IBOutlet weak var prescriptionNameLabel: UILabel!
     @IBOutlet weak var prescriptionTakenDate: UILabel!
@@ -27,6 +28,7 @@ class PrescriptionListTableViewCell: UITableViewCell {
     
     func viewDidLoad() {
         updateViews()
+      
     }
     
     func prescriptionWasAdded(_ prescription: Prescription) {
@@ -63,18 +65,27 @@ class PrescriptionListTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func textFieldShouldReturn(_ textField: UILabel) -> Bool {
-    if let text = textField.text,
-        !text.isEmpty {
-        switch textField {
-        case prescriptionNameLabel:
-            textField.resignFirstResponder()
-        default:
-            textField.resignFirstResponder()
-        }
-    }
-        return false
+//    func textFieldShouldReturn(_ textField: UILabel) -> Bool {
+//    if let text = textField.text,
+//        !text.isEmpty {
+//        switch textField {
+//        case prescriptionNameLabel:
+//            textField.resignFirstResponder()
+//        default:
+//            textField.resignFirstResponder()
+//        }
+//    }
+//        return false
+//   }
+    
+   // MARK: - Navigation
+    
+   func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+       if segue.identifier == "AddPrescriptionSegue" {
+           guard let viewPrescriptionVC = segue.destination as? AddPrescriptionViewController else { return }
+          viewPrescriptionVC.prescriptionController = prescriptionController
+        viewPrescriptionVC.delegate = self
+
+       }
    }
-    
-    
 }

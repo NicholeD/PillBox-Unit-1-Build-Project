@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		152E63FD240ED78200210D0A /* PrescriptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152E63FC240ED78200210D0A /* PrescriptionModel.swift */; };
 		152E63FF240ED79200210D0A /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152E63FE240ED79200210D0A /* ProfileModel.swift */; };
-		152E6401240F184E00210D0A /* PrescriptionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152E6400240F184E00210D0A /* PrescriptionListViewController.swift */; };
+		152E6401240F184E00210D0A /* PrescriptionListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152E6400240F184E00210D0A /* PrescriptionListTableViewController.swift */; };
 		15322B43240EC31400F1E27A /* AddProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15322B3B240EC31400F1E27A /* AddProfileViewController.swift */; };
 		15322B46240EC31400F1E27A /* AddPrescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15322B3E240EC31400F1E27A /* AddPrescriptionViewController.swift */; };
 		15803F1D240F1FE900619169 /* PrescriptionListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15803F1C240F1FE900619169 /* PrescriptionListTableViewCell.swift */; };
@@ -27,7 +27,7 @@
 /* Begin PBXFileReference section */
 		152E63FC240ED78200210D0A /* PrescriptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrescriptionModel.swift; sourceTree = "<group>"; };
 		152E63FE240ED79200210D0A /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
-		152E6400240F184E00210D0A /* PrescriptionListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrescriptionListViewController.swift; sourceTree = "<group>"; };
+		152E6400240F184E00210D0A /* PrescriptionListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrescriptionListTableViewController.swift; sourceTree = "<group>"; };
 		15322B3B240EC31400F1E27A /* AddProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddProfileViewController.swift; sourceTree = "<group>"; };
 		15322B3E240EC31400F1E27A /* AddPrescriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPrescriptionViewController.swift; sourceTree = "<group>"; };
 		15803F1C240F1FE900619169 /* PrescriptionListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrescriptionListTableViewCell.swift; sourceTree = "<group>"; };
@@ -68,7 +68,7 @@
 		15322B3A240EC31400F1E27A /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				152E6400240F184E00210D0A /* PrescriptionListViewController.swift */,
+				152E6400240F184E00210D0A /* PrescriptionListTableViewController.swift */,
 				15803F1C240F1FE900619169 /* PrescriptionListTableViewCell.swift */,
 				15322B3E240EC31400F1E27A /* AddPrescriptionViewController.swift */,
 				15322B3B240EC31400F1E27A /* AddProfileViewController.swift */,
@@ -200,7 +200,7 @@
 				15F47F4D240DAF5B006A7D21 /* AppDelegate.swift in Sources */,
 				152E63FD240ED78200210D0A /* PrescriptionModel.swift in Sources */,
 				15F47F4F240DAF5B006A7D21 /* SceneDelegate.swift in Sources */,
-				152E6401240F184E00210D0A /* PrescriptionListViewController.swift in Sources */,
+				152E6401240F184E00210D0A /* PrescriptionListTableViewController.swift in Sources */,
 				15AA6497240F663A00344B5E /* DarkModeHelper.swift in Sources */,
 				152E63FF240ED79200210D0A /* ProfileModel.swift in Sources */,
 				15322B43240EC31400F1E27A /* AddProfileViewController.swift in Sources */,

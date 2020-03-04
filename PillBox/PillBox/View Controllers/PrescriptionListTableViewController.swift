@@ -9,10 +9,10 @@
 import UIKit
 
 
-class PrescriptionListViewController: UIViewController {
+class PrescriptionListTableViewController: UITableViewController, PrescriptionListTableViewCellDelegate {
 
     @IBOutlet weak var profileName: UILabel!
-    @IBOutlet weak var tableView: UITableView!
+
     
     var prescriptionController: PrescriptionController?
     var prescription: Prescription?
@@ -23,6 +23,7 @@ class PrescriptionListViewController: UIViewController {
       super.viewDidLoad()
       setTheme()
       updateViews()
+//      tableView.reloadData()
     }
     // pass into each viewcontroller
     func setTheme() {
@@ -39,15 +40,23 @@ class PrescriptionListViewController: UIViewController {
                profileName.text = profile.name
     }
     
-    // TODO: popViewController from 'Add Prescription' button
+    func toggleHasBeenTaken(for cell: PrescriptionListTableViewCell) {
+//        guard let indexPath = tableView.indexPath(for: cell) else { return }
+        if let prescription = prescription {
+//            var takenPrescription = prescription.taken
+        prescription.taken.toggle()
+        tableView.reloadData()
+            prescriptionController?.prescriptions.append(prescription)
+    }
+}
     // MARK: - Table view data source
        
-       func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
                guard let prescriptionController = prescriptionController else { return 0}
                return prescriptionController.prescriptions.count
        }
 
-      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
                guard let cell = tableView.dequeueReusableCell(withIdentifier: "PrescriptionCell", for: indexPath) as? PrescriptionListTableViewCell,
                    let prescriptionController = prescriptionController else { return UITableViewCell()}
 
@@ -56,6 +65,14 @@ class PrescriptionListViewController: UIViewController {
        
                return cell
            }
+    
+      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+          if segue.identifier == "AddPrescriptionSegue" {
+              guard let viewPrescriptionVC = segue.destination as? AddPrescriptionViewController else { return }
+             viewPrescriptionVC.prescriptionController = prescriptionController
+
+          }
+      }
   }
     
     
