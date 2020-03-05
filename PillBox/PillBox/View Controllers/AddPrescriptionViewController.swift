@@ -22,20 +22,22 @@ class AddPrescriptionViewController: UIViewController {
     
     var prescriptionController: PrescriptionController?
     var delegate: PrescriptionAddedDelegate?
+    var settingsVC: SettingsViewController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
     
     func setTheme() {
-    guard let themeHelper = themeHelper?.themePreference else { return }
+        guard let themeHelper = settingsVC.themeHelper?.themePreference else { return }
      
      var backgroundColor: UIColor!
       
      switch themeHelper {
      case "Dark":
        backgroundColor = .black
-       label.textColor = .white
+       settingsVC.label.textColor = .white
      default:
        break
     }
