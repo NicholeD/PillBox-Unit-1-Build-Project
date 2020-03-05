@@ -13,8 +13,8 @@ class Prescription: Codable {
     var name: String
     var dosage: String
     var frequency: String
-    var am: Bool
-    var pm: Bool
+    var am: Bool?
+    var pm: Bool?
     var notes: String?
     var taken: Bool
     

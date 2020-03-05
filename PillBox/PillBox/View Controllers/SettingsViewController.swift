@@ -30,7 +30,15 @@ class SettingsViewController: UIViewController {
             view.backgroundColor = UIColor.white
             label.textColor = UIColor.black
         }
+<<<<<<< HEAD
 
+=======
+    
+        
+    }
+    
+    var themeHelper: ThemeHelper?
+>>>>>>> b7ed0202343fefe626478a0883064b4a03b839f2
 }
 // pass theme through each segue 
 }

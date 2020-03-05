@@ -22,14 +22,19 @@ class PrescriptionListTableViewCell: UITableViewCell {
     }
     
     var prescriptionController: PrescriptionController?
-    var prescription: Prescription?
+    var prescription: Prescription? {
+        didSet {
+            prescriptionWasAdded(prescription)
+        }
+    }
     var delegate: PrescriptionListTableViewCellDelegate?
     
     func viewDidLoad() {
         updateViews()
+      
     }
     
-    func prescriptionWasAdded(_ prescription: Prescription) {
+    func prescriptionWasAdded(_ prescription: Prescription?) {
         updateViews()
 }
     
@@ -60,21 +65,16 @@ class PrescriptionListTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
     }
     
-    func textFieldShouldReturn(_ textField: UILabel) -> Bool {
-    if let text = textField.text,
-        !text.isEmpty {
-        switch textField {
-        case prescriptionNameLabel:
-            textField.resignFirstResponder()
-        default:
-            textField.resignFirstResponder()
-        }
-    }
-        return false
-   }
+   // MARK: - Navigation
     
-    
+//   func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//       if segue.identifier == "AddPrescriptionSegue" {
+//           guard let viewPrescriptionVC = segue.destination as? AddPrescriptionViewController else { return }
+//          viewPrescriptionVC.prescriptionController = prescriptionController
+//          viewPrescriptionVC.delegate = self
+//
+//       }
+//   }
 }
