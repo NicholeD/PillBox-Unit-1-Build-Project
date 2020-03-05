@@ -12,8 +12,6 @@ import UIKit
 class PrescriptionListTableViewController: UITableViewController, PrescriptionListTableViewCellDelegate, PrescriptionAddedDelegate {
    
     var prescriptionController: PrescriptionController = PrescriptionController()
-//    var prescriptions: [Prescription] = []
-//    var prescription: Prescription?
     let themeHelper = ThemeHelper()
 
     override func viewDidLoad() {

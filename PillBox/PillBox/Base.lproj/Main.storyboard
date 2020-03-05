@@ -378,7 +378,93 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FrW-tW-lWk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1473.913043478261" y="390.40178571428572"/>
+            <point key="canvasLocation" x="2384.057971014493" y="390.40178571428572"/>
+        </scene>
+        <!--Prescription List Table View Controller-->
+        <scene sceneID="nUz-jY-KHt">
+            <objects>
+                <tableViewController id="kDl-Se-vJY" customClass="PrescriptionListTableViewController" customModule="PillBox" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="aNj-mn-Faa">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PrescriptionCell" rowHeight="105" id="swJ-sO-0w0" customClass="PrescriptionListTableViewCell" customModule="PillBox" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="105"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="swJ-sO-0w0" id="DoO-IB-6mV">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="105"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tl6-Ax-aUd">
+                                            <rect key="frame" x="20" y="11" width="49.5" height="24"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bs1-hg-stX">
+                                            <rect key="frame" x="20" y="68" width="200" height="18"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="200" id="AbU-wL-nfi"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gma-hD-bCp">
+                                            <rect key="frame" x="344" y="46" width="40" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="40" id="O2v-1y-GWa"/>
+                                                <constraint firstAttribute="width" secondItem="gma-hD-bCp" secondAttribute="height" multiplier="1:1" id="hik-88-3Uv"/>
+                                                <constraint firstAttribute="height" constant="40" id="yF0-U0-akn"/>
+                                            </constraints>
+                                            <state key="normal" image="unchecked"/>
+                                            <connections>
+                                                <action selector="prescriptionTakenBoxTapped:" destination="swJ-sO-0w0" eventType="touchUpInside" id="zgz-h0-MYJ"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="gma-hD-bCp" secondAttribute="trailing" constant="30" id="39b-6Y-Uvy"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="tl6-Ax-aUd" secondAttribute="trailing" constant="20" id="4xj-1A-Ko6"/>
+                                        <constraint firstItem="Bs1-hg-stX" firstAttribute="leading" secondItem="DoO-IB-6mV" secondAttribute="leadingMargin" id="5Nx-LN-geg"/>
+                                        <constraint firstItem="gma-hD-bCp" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Bs1-hg-stX" secondAttribute="trailing" constant="8" id="5aE-iG-65y"/>
+                                        <constraint firstItem="tl6-Ax-aUd" firstAttribute="top" secondItem="DoO-IB-6mV" secondAttribute="topMargin" id="I8V-eG-Sgx"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="gma-hD-bCp" secondAttribute="bottom" constant="8" id="NEr-WZ-cKM"/>
+                                        <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="Bs1-hg-stX" secondAttribute="trailing" constant="8" id="VQy-c4-6yR"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Bs1-hg-stX" secondAttribute="bottom" constant="8" id="nMP-eX-WnV"/>
+                                        <constraint firstItem="tl6-Ax-aUd" firstAttribute="leading" secondItem="DoO-IB-6mV" secondAttribute="leading" constant="20" id="xDd-f2-2Ip"/>
+                                        <constraint firstItem="gma-hD-bCp" firstAttribute="top" secondItem="DoO-IB-6mV" secondAttribute="topMargin" constant="35" id="yY8-Q4-apy"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="prescriptionNameLabel" destination="tl6-Ax-aUd" id="mgW-RW-hLU"/>
+                                    <outlet property="prescriptionTakenBox" destination="gma-hD-bCp" id="YNc-Cx-kuR"/>
+                                    <outlet property="prescriptionTakenDate" destination="Bs1-hg-stX" id="No1-84-Gjv"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="kDl-Se-vJY" id="RJb-ND-wh2"/>
+                            <outlet property="delegate" destination="kDl-Se-vJY" id="ezN-dg-94L"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="abw-hc-KuM">
+                        <barButtonItem key="leftBarButtonItem" image="gear" catalog="system" id="yBe-Vt-Z9P">
+                            <connections>
+                                <segue destination="DQP-Ea-raw" kind="show" identifier="SettingsSegue" id="5eH-fo-Rwc"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Pz0-kN-XA3">
+                            <connections>
+                                <segue destination="3fb-4T-p2M" kind="show" identifier="AddPrescriptionSegue" id="Agz-lU-LJl"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X0K-7I-NNs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1386.9565217391305" y="60.9375"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pgW-TR-jE5">

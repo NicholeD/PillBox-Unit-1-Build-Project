@@ -42,7 +42,7 @@ class PrescriptionListTableViewCell: UITableViewCell {
         guard let prescription = prescription else { return }
         
         prescriptionNameLabel.text = prescription.name
-        prescriptionTakenDate.text = "\(String(describing: DateFormatter.date(dateFormatter)))"
+        prescriptionTakenDate.text = "\(dateFormatter.string(from: date))"
         
         if prescription.taken {
             prescriptionTakenBox.imageView?.image = UIImage(named: "checked")
@@ -50,10 +50,13 @@ class PrescriptionListTableViewCell: UITableViewCell {
             prescriptionTakenBox.imageView?.image = UIImage(named: "unchecked")
         }
     }
-   
+    
+    let date = Date()
        let dateFormatter: DateFormatter = {
+        let date = Date()
          let formatter = DateFormatter()
-         formatter.dateFormat = "EEE, MMM d, yyy"
+        formatter.dateStyle = .full
+        let formattedDate = formatter.string(from: date)
          return formatter
      }()
     
@@ -66,15 +69,4 @@ class PrescriptionListTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
     }
-    
-   // MARK: - Navigation
-    
-//   func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//       if segue.identifier == "AddPrescriptionSegue" {
-//           guard let viewPrescriptionVC = segue.destination as? AddPrescriptionViewController else { return }
-//          viewPrescriptionVC.prescriptionController = prescriptionController
-//          viewPrescriptionVC.delegate = self
-//
-//       }
-//   }
 }
