@@ -16,6 +16,7 @@ class SettingsViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    //TODO: Userdefaults??
 
     @IBAction func darkMode(_ sender: UISwitch) {
         if (sender.isOn == true) {
