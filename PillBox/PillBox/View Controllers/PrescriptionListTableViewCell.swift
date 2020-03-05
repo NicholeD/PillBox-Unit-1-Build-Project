@@ -18,6 +18,7 @@ class PrescriptionListTableViewCell: UITableViewCell {
     @IBOutlet weak var prescriptionTakenDate: UILabel!
     @IBOutlet weak var prescriptionTakenBox: UIButton!
     @IBAction func prescriptionTakenBoxTapped(_ sender: Any) {
+        prescriptionController?.updateHasBeenTaken()
         delegate?.toggleHasBeenTaken(for: self)
     }
     

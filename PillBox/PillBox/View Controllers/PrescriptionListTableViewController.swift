@@ -11,6 +11,8 @@ import UIKit
 
 class PrescriptionListTableViewController: UITableViewController, PrescriptionListTableViewCellDelegate, PrescriptionAddedDelegate {
    
+    @IBOutlet var prescriptionTableView: UITableView!
+    
     var prescriptionController: PrescriptionController = PrescriptionController()
     let themeHelper = ThemeHelper()
 
