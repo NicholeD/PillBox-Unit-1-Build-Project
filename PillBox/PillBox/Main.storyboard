@@ -131,7 +131,7 @@
         <!--Settings-->
         <scene sceneID="H4o-Si-MtP">
             <objects>
-                <viewController id="DQP-Ea-raw" sceneMemberID="viewController">
+                <viewController id="DQP-Ea-raw" customClass="SettingsViewController" customModule="PillBox" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="90W-ur-9Ir">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -148,6 +148,9 @@
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="RGi-Cu-ymF">
                                         <rect key="frame" x="208" y="0.0" width="51" height="31"/>
                                         <color key="thumbTintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="darkMode:" destination="DQP-Ea-raw" eventType="valueChanged" id="XLm-I1-RDQ"/>
+                                        </connections>
                                     </switch>
                                 </subviews>
                             </stackView>
@@ -160,6 +163,10 @@
                         <viewLayoutGuide key="safeArea" id="5hf-2X-AVV"/>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="u8w-D9-Xgf"/>
+                    <connections>
+                        <outlet property="label" destination="1z9-7T-fO3" id="sWy-8s-aKY"/>
+                        <outlet property="outletSwitch" destination="RGi-Cu-ymF" id="I01-xH-zZD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NgJ-h1-4mD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -187,7 +194,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mvV-W8-87U">
                                 <rect key="frame" x="131" y="564" width="152" height="52"/>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="27"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
                                 <state key="normal" title="Add Alert"/>
                             </button>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ygv-sp-IlW">
