@@ -18,8 +18,6 @@ class ThemeHelper {
         return UserDefaults.standard.string(forKey: themePreferenceKey)
     }
     
-    
-    
     init() {
         guard themePreference == nil else { return }
         setThemePreferenceToDark()

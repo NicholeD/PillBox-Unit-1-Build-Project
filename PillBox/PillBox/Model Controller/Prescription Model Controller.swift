@@ -10,7 +10,11 @@ import Foundation
 
 class PrescriptionController {
     
-   
+   init() {
+          
+            loadFromPersistentStore()
+        }
+    
     var prescriptions: [Prescription] = []
     
     func addPrescriptionTapped(with name: String, dosage: String, frequency: String, am: Bool = false, pm: Bool = false, notes: String) {
@@ -22,11 +26,6 @@ class PrescriptionController {
         saveToPersistentStore()
     }
     
-    init() {
-         
-           loadFromPersistentStore()
-       }
-       
     
     var prescriptionListURL: URL? {
 
