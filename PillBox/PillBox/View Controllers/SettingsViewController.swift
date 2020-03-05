@@ -9,7 +9,10 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
-
+    
+    @IBOutlet weak var label: UILabel!
+       @IBOutlet weak var outletSwitch: UISwitch!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,17 +21,25 @@ class SettingsViewController: UIViewController {
     
     //TODO: Userdefaults??
 
+
+
     @IBAction func darkMode(_ sender: UISwitch) {
-        if (sender.isOn == true) {
-            themeHelper?.setThemePreferenceToDark()
-            dismiss(animated: true, completion: nil)
-        } else if sender.isOn == false {
-            themeHelper?.setThemePreferenceToDark()
+        if outletSwitch.isOn == true {
+            view.backgroundColor = UIColor.black
+            label.textColor = UIColor.white
+        } else {
+            view.backgroundColor = UIColor.white
+            label.textColor = UIColor.black
         }
+<<<<<<< HEAD
+
+=======
     
         
     }
     
     var themeHelper: ThemeHelper?
+>>>>>>> b7ed0202343fefe626478a0883064b4a03b839f2
 }
 // pass theme through each segue 
+}
