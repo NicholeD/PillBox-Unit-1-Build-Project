@@ -8,7 +8,7 @@
 
 import UIKit
 protocol PrescriptionAddedDelegate {
-    func prescriptionWasAdded(_ prescription: Prescription)
+    func prescriptionWasAdded()
 }
 
 class AddPrescriptionViewController: UIViewController {
@@ -27,6 +27,23 @@ class AddPrescriptionViewController: UIViewController {
 
     }
     
+    func setTheme() {
+    guard let themeHelper = themeHelper?.themePreference else { return }
+     
+     var backgroundColor: UIColor!
+      
+     switch themeHelper {
+     case "Dark":
+       backgroundColor = .black
+       label.textColor = .white
+     default:
+       break
+    }
+     
+     view.backgroundColor = backgroundColor
+     
+     }
+    
       // Toggle action will show in the alert or in the prescription detail view... not sure yet
     
     @IBAction func toggleAm(_ sender: UISwitch) {
@@ -41,9 +58,9 @@ class AddPrescriptionViewController: UIViewController {
             let frequency = frequencyTextField.text,
             let notes = notesTextView.text else { return }
         
-         let prescription = Prescription(name: name, dosage: dosage, frequency: frequency, notes: notes)
+        prescriptionController?.addPrescriptionTapped(with: name, dosage: dosage, frequency: frequency, notes: notes)
         
-        delegate?.prescriptionWasAdded(prescription)
+        delegate?.prescriptionWasAdded()
         
         navigationController?.popViewController(animated: true)
     }

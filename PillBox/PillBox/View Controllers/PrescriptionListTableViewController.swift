@@ -28,8 +28,7 @@ class PrescriptionListTableViewController: UITableViewController, PrescriptionLi
         view.backgroundColor = .none
       }
   }
-    func prescriptionWasAdded(_ prescription: Prescription) {
-        prescriptionController.prescriptions.append(prescription)
+    func prescriptionWasAdded() {
         tableView.reloadData()
     }
     
@@ -63,9 +62,16 @@ class PrescriptionListTableViewController: UITableViewController, PrescriptionLi
           if segue.identifier == "AddPrescriptionSegue" {
               guard let viewPrescriptionVC = segue.destination as? AddPrescriptionViewController else { return }
              viewPrescriptionVC.prescriptionController = prescriptionController
-            viewPrescriptionVC.delegate = self
-
-          }
+             viewPrescriptionVC.delegate = self
+          } else {
+            switch segue.identifier {
+                   case "SelectTheme":
+                       guard let destinationVC = segue.destination as? SettingsViewController else { return }
+                       destinationVC.themeHelper = themeHelper
+            default:
+                return
+                }
+        }
       }
   }
     

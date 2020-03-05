@@ -10,10 +10,10 @@ import Foundation
 
 class PrescriptionController {
     
-   init() {
-          
-            loadFromPersistentStore()
-        }
+    init() {
+        
+        loadFromPersistentStore()
+    }
     
     var prescriptions: [Prescription] = []
     
@@ -26,47 +26,66 @@ class PrescriptionController {
         saveToPersistentStore()
     }
     
+    func updateHasBeenTaken(for prescription: Prescription) {
+        
+        var hasBeenTaken = false
+        switch hasBeenTaken {
+        case true:
+            hasBeenTaken.toggle()
+        default:
+            hasBeenTaken.toggle()
+        }
+        saveToPersistentStore()
+    }
+    
+    func toggleHasBeenTaken(for cell: PrescriptionListTableViewCell) {
+        saveToPersistentStore()
+    }
+    
+    // MARK: Persistence
     
     var prescriptionListURL: URL? {
-
+        
         let fileManager = FileManager.default
-        guard let documentsDir = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first else { return nil }
-
-        let prescriptionsURL = documentsDir.appendingPathComponent("PrescriptionList.plist")
-
+        let documentsDir = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first
+        
+        let prescriptionsURL = documentsDir?.appendingPathComponent("PrescriptionList.plist")
+        
         return prescriptionsURL
     }
-
+    
     func saveToPersistentStore() {
-
-        guard let fileURL = prescriptionListURL else { return }
-
+        
         let encoder = PropertyListEncoder()
-
+        
         do {
-
-            let prescriptionsData = try encoder.encode(prescriptions)
-            try prescriptionsData.write(to: fileURL)
-
+            let prescriptionsPlist = try encoder.encode(prescriptions)
+            
+            guard let fileURL = prescriptionListURL else { return }
+            
+            
+            try prescriptionsPlist.write(to: fileURL)
+            
         } catch {
             print("Error encoding prescriptions array: \(error)")
-
-        }
-     }
-
-        func loadFromPersistentStore() {
-
-            do {
-                guard let fileURL = prescriptionListURL else { return }
-                let prescriptionsData = try Data(contentsOf: fileURL)
-                let decoder = PropertyListDecoder()
-                let decodedPrescriptions = try decoder.decode([Prescription].self, from: prescriptionsData)
-                self.prescriptions = decodedPrescriptions
-            } catch {
-                print("Error decoding prescriptions: \(error)")
         }
     }
     
+    func loadFromPersistentStore() {
+        guard let fileURL = prescriptionListURL else { return }
+        let decoder = PropertyListDecoder()
+        
+        do {
+            
+            let prescriptionsData = try Data(contentsOf: fileURL)
+            
+            let decodedPrescriptions = try decoder.decode([Prescription].self, from: prescriptionsData)
+            self.prescriptions = decodedPrescriptions
+            
+        } catch {
+            print("Error decoding prescriptions: \(error)")
+        }
+    }
 }
 
 
