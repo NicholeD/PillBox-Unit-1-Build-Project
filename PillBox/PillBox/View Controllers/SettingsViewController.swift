@@ -24,17 +24,31 @@ class SettingsViewController: UIViewController {
 
 
     @IBAction func darkMode(_ sender: UISwitch) {
-        if outletSwitch.isOn == true {
-            view.backgroundColor = UIColor.black
-            label.textColor = UIColor.white
-        } else {
-            view.backgroundColor = UIColor.white
-            label.textColor = UIColor.black
-        }
 
+        themeHelper?.setThemePreferenceToDark()
+        dismiss(animated: true, completion: nil)
+    }
     
     var themeHelper: ThemeHelper?
 
-}
+
+
 // pass theme through each segue 
+
+func setTheme() {
+  guard let themeHelper = themeHelper?.themePreference else { return }
+  
+    var backgroundColor: UIColor!
+    
+    switch themeHelper {
+    case "Dark":
+        backgroundColor = .black
+        label.textColor = .white
+    default:
+        break
+  }
+   
+    view.backgroundColor = backgroundColor
+   
+    }
 }
