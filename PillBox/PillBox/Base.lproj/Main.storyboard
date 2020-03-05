@@ -284,39 +284,41 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tl6-Ax-aUd">
-                                            <rect key="frame" x="20" y="11" width="42" height="58"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <rect key="frame" x="20" y="8" width="374" height="24.5"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gma-hD-bCp">
-                                            <rect key="frame" x="296" y="-4" width="50" height="50"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gma-hD-bCp">
+                                            <rect key="frame" x="300" y="34" width="35" height="35"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="35" id="ChH-yZ-MNw"/>
+                                                <constraint firstAttribute="height" constant="35" id="fm3-2a-nUc"/>
+                                            </constraints>
                                             <state key="normal" title="Button" image="unchecked"/>
                                             <connections>
                                                 <action selector="prescriptionTakenBox:" destination="swJ-sO-0w0" eventType="touchUpInside" id="gyX-Kk-D9d"/>
                                                 <action selector="prescriptionTakenBoxTapped:" destination="swJ-sO-0w0" eventType="touchUpInside" id="zgz-h0-MYJ"/>
                                             </connections>
                                         </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bs1-hg-stX">
-                                            <rect key="frame" x="354" y="10" width="54" height="24"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bs1-hg-stX">
+                                            <rect key="frame" x="20" y="49" width="36" height="20"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="Bs1-hg-stX" firstAttribute="leading" secondItem="gma-hD-bCp" secondAttribute="trailing" constant="8" id="1ou-ta-VCk"/>
-                                        <constraint firstAttribute="trailing" secondItem="Bs1-hg-stX" secondAttribute="trailing" constant="6" id="8Wp-Gt-Mj8"/>
-                                        <constraint firstItem="gma-hD-bCp" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="tl6-Ax-aUd" secondAttribute="trailing" constant="234" id="BBA-g3-Yph"/>
-                                        <constraint firstItem="gma-hD-bCp" firstAttribute="leading" secondItem="DoO-IB-6mV" secondAttribute="leading" constant="296" id="XGU-ya-SPf"/>
-                                        <constraint firstItem="tl6-Ax-aUd" firstAttribute="bottom" secondItem="DoO-IB-6mV" secondAttribute="bottomMargin" id="aMR-eD-eGm"/>
-                                        <constraint firstAttribute="bottom" secondItem="Bs1-hg-stX" secondAttribute="bottom" constant="10" id="fFJ-vQ-u7r"/>
-                                        <constraint firstItem="Bs1-hg-stX" firstAttribute="top" secondItem="DoO-IB-6mV" secondAttribute="top" constant="10" id="fXk-00-Tvo"/>
-                                        <constraint firstItem="gma-hD-bCp" firstAttribute="top" secondItem="DoO-IB-6mV" secondAttribute="topMargin" constant="-15" id="kDy-cl-EOu"/>
-                                        <constraint firstItem="gma-hD-bCp" firstAttribute="firstBaseline" secondItem="tl6-Ax-aUd" secondAttribute="firstBaseline" id="nGH-iu-L8u"/>
-                                        <constraint firstItem="gma-hD-bCp" firstAttribute="centerY" secondItem="Bs1-hg-stX" secondAttribute="centerY" id="qDj-Yf-pQ9"/>
-                                        <constraint firstItem="tl6-Ax-aUd" firstAttribute="leading" secondItem="DoO-IB-6mV" secondAttribute="leadingMargin" id="qao-QO-fAR"/>
-                                        <constraint firstItem="tl6-Ax-aUd" firstAttribute="top" secondItem="DoO-IB-6mV" secondAttribute="topMargin" id="xhb-ic-o9J"/>
+                                        <constraint firstItem="tl6-Ax-aUd" firstAttribute="top" secondItem="DoO-IB-6mV" secondAttribute="top" constant="8" id="Izk-OC-Xf5"/>
+                                        <constraint firstItem="gma-hD-bCp" firstAttribute="top" secondItem="DoO-IB-6mV" secondAttribute="top" constant="34" id="WwE-jR-Xwa"/>
+                                        <constraint firstItem="Bs1-hg-stX" firstAttribute="bottom" secondItem="DoO-IB-6mV" secondAttribute="bottomMargin" id="Xxl-c7-gU0"/>
+                                        <constraint firstAttribute="trailing" secondItem="tl6-Ax-aUd" secondAttribute="trailing" constant="20" id="cK6-ZS-U3O"/>
+                                        <constraint firstItem="Bs1-hg-stX" firstAttribute="top" secondItem="tl6-Ax-aUd" secondAttribute="bottom" constant="16.5" id="fgl-6L-dFX"/>
+                                        <constraint firstItem="tl6-Ax-aUd" firstAttribute="leading" secondItem="DoO-IB-6mV" secondAttribute="leading" constant="20" id="gT0-by-Fdl"/>
+                                        <constraint firstItem="gma-hD-bCp" firstAttribute="leading" secondItem="DoO-IB-6mV" secondAttribute="leading" constant="300" id="lRT-l5-Y39"/>
+                                        <constraint firstItem="gma-hD-bCp" firstAttribute="top" secondItem="tl6-Ax-aUd" secondAttribute="bottom" constant="1.5" id="mvo-cV-hFq"/>
+                                        <constraint firstItem="Bs1-hg-stX" firstAttribute="leading" secondItem="DoO-IB-6mV" secondAttribute="leadingMargin" id="pZx-MB-dhd"/>
+                                        <constraint firstItem="gma-hD-bCp" firstAttribute="bottom" secondItem="DoO-IB-6mV" secondAttribute="bottomMargin" id="s5D-pA-GeV"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
