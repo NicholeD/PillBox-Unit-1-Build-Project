@@ -323,7 +323,7 @@
                                     <outlet property="prescriptionNameLabel" destination="tl6-Ax-aUd" id="mgW-RW-hLU"/>
                                     <outlet property="prescriptionTakenBox" destination="gma-hD-bCp" id="YNc-Cx-kuR"/>
                                     <outlet property="prescriptionTakenDate" destination="Bs1-hg-stX" id="No1-84-Gjv"/>
-                                    <segue destination="3fb-4T-p2M" kind="presentation" identifier="PrescriptionDetailSegue" id="ksn-1s-qkd"/>
+                                    <segue destination="3fb-4T-p2M" kind="show" identifier="PrescriptionDetailSegue" id="eTd-d9-glQ"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -377,6 +377,6 @@
         <image name="unchecked" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Swl-0n-3Lk"/>
+        <segue reference="eTd-d9-glQ"/>
     </inferredMetricsTieBreakers>
 </document>
