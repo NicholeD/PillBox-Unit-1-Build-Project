@@ -17,7 +17,6 @@ class PrescriptionListTableViewController: UITableViewController, PrescriptionLi
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     func prescriptionWasAdded() {

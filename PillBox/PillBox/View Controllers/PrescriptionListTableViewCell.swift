@@ -18,8 +18,6 @@ class PrescriptionListTableViewCell: UITableViewCell {
     @IBOutlet weak var prescriptionTakenDate: UILabel!
     @IBOutlet weak var prescriptionTakenBox: UIButton!
     @IBAction func prescriptionTakenBoxTapped(_ sender: Any) {
-//        prescriptionController?.updateHasBeenTaken()
-//        delegate?.toggleHasBeenTaken(for: self)
         prescription.taken.toggle()
         updateViews()
         prescriptionController?.saveToPersistentStore()
@@ -47,13 +45,7 @@ class PrescriptionListTableViewCell: UITableViewCell {
         let image = prescription.taken ? UIImage(named: "checked") : UIImage(named: "unchecked")
         
         prescriptionTakenBox.setImage(image, for: .normal)
-            
-
-//        if prescription.taken {
-//            prescriptionTakenBox.imageView?.image = UIImage(named: "checked")
-//        } else {
-//            prescriptionTakenBox.imageView?.image = UIImage(named: "unchecked")
-//        }
+    
     }
     
     let date = Date()
