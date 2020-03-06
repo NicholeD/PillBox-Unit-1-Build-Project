@@ -9,21 +9,23 @@ import UIKit
 
 class ThemeHelper {
     
-        
-    func setThemePreferenceToDark() {
-        UserDefaults.standard.set("Dark", forKey: themePreferenceKey)
-    }
-    
-    var themePreference: String? {
-        return UserDefaults.standard.string(forKey: themePreferenceKey)
-    }
-    
-    init() {
-        guard themePreference == nil else { return }
-        setThemePreferenceToDark()
+    var themeSelected: Bool
         
 
+    init(themeSelected: Bool = false) {
+        self.themeSelected = themeSelected
+        guard themePreference == nil else { return }
+        setThemePreferenceToDark()
+
         }
+    
+    func setThemePreferenceToDark() {
+           UserDefaults.standard.set("Dark", forKey: themePreferenceKey)
+       }
+       
+       var themePreference: String? {
+           return UserDefaults.standard.string(forKey: themePreferenceKey)
+       }
     
     private let themePreferenceKey = "themePreference"
 

@@ -12,59 +12,36 @@ protocol PrescriptionAddedDelegate {
 }
 
 class AddPrescriptionViewController: UIViewController {
-
+    
     @IBOutlet weak var prescriptionNameTextField: UITextField!
     @IBOutlet weak var dosageTextField: UITextField!
     @IBOutlet weak var frequencyTextField: UITextField!
     @IBOutlet weak var toggleAmSwitch: UISwitch!
     @IBOutlet weak var togglePmSwitch: UISwitch!
     @IBOutlet weak var notesTextView: UITextView!
+    @IBOutlet weak var savePrescription: UIButton!
     
     var prescriptionController: PrescriptionController?
     var prescription: Prescription?
     var delegate: PrescriptionAddedDelegate?
     var addPrescriptionViewController: AddPrescriptionViewController?
-    var settingsVC: SettingsViewController!
-    var themeHelper: ThemeHelper?
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
         updateView()
-
-    }
-    
-    private func updateView() {
-        if prescription != nil {
-            self.title = prescriptionNameTextField.text
-            addPrescriptionViewController?.title = "\(prescriptionNameTextField.text ?? "Add a new prescription")"
-        }
-
-       let dosageString = String(dosageTextField.text ?? "")
-       self.dosageTextField.text = dosageString
-       let frequencyString = String(frequencyTextField.text ?? "")
-       self.frequencyTextField.text = frequencyString
-       let notesString = String(notesTextView.text ?? "")
-       self.notesTextView.text = notesString
         
     }
     
-    func setTheme() {
-        guard let themeHelper = settingsVC.themeHelper?.themePreference else { return }
-     
-     var backgroundColor: UIColor!
-      
-     switch themeHelper {
-     case "Dark":
-       backgroundColor = .black
-       settingsVC.label.textColor = .white
-     default:
-       break
+    private func updateView() {
+        if let prescription = prescription {
+            prescriptionNameTextField.text = prescription.name
+            dosageTextField.text = prescription.dosage
+            frequencyTextField.text = prescription.frequency
+            notesTextView.text = prescription.notes
+            toggleAmSwitch.isOn = prescription.am ?? false
+            togglePmSwitch.isOn = prescription.pm ?? false
+        }
     }
-     
-     view.backgroundColor = backgroundColor
-     
-     }
     
     @IBAction func toggleAm(_ sender: UISwitch) {
     }
@@ -74,20 +51,26 @@ class AddPrescriptionViewController: UIViewController {
     
     @IBAction func addPrescriptionTapped(_ sender: Any) {
         guard let name = prescriptionNameTextField?.text,
-        let dosage = dosageTextField.text,
-        let frequency = frequencyTextField.text,
-        let notes = notesTextView.text,
-        name != "" && dosage != "" && frequency != "" && notes != "" else { return }
+            name != "" else { return }
         
         if let prescriptionController = prescriptionController {
-             prescriptionController.addPrescriptionTapped(with: name, dosage: dosage, frequency: frequency, notes: notes)
-
-        } else {
-             prescriptionController?.addPrescriptionTapped(with: name, dosage: dosage, frequency: frequency, notes: notes)
+            
+            if let prescription = prescription {
+                prescription.name = prescriptionNameTextField.text ?? ""
+                prescription.dosage = dosageTextField.text ?? ""
+                prescription.frequency = frequencyTextField.text ?? ""
+                prescription.notes = notesTextView.text
+                prescription.am = toggleAmSwitch.isOn
+                prescription.pm = togglePmSwitch.isOn
+                prescriptionController.saveToPersistentStore()
+            } else{
+                prescriptionController.addPrescriptionTapped(with: name, dosage: dosageTextField.text ?? "", frequency: frequencyTextField.text ?? "", notes: notesTextView.text)
             }
+        }
+        
         delegate?.prescriptionWasAdded()
         
         navigationController?.popViewController(animated: true)
     }
-  }
+}
 
