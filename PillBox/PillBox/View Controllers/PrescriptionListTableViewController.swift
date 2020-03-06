@@ -66,18 +66,17 @@ class PrescriptionListTableViewController: UITableViewController, PrescriptionLi
               guard let viewPrescriptionVC = segue.destination as? AddPrescriptionViewController else { return }
                viewPrescriptionVC.prescriptionController = prescriptionController
                viewPrescriptionVC.delegate = self
-               viewPrescriptionVC.setTheme()
+               viewPrescriptionVC.themeHelper = themeHelper
           } else {
         if segue.identifier == "PrescriptionDetailSegue" {
             guard let viewPrescriptionDetailVC = segue.destination as? AddPrescriptionViewController else { return }
                viewPrescriptionDetailVC.prescriptionController = prescriptionController
                viewPrescriptionDetailVC.addPrescriptionTapped(Prescription.self)
-            viewPrescriptionDetailVC.setTheme()
-            
+            viewPrescriptionDetailVC.themeHelper = themeHelper
           } else {
         if segue.identifier == "SelectTheme" {
             guard let destinationVC = segue.destination as? SettingsViewController else { return }
-               destinationVC.setTheme()
+               destinationVC.themeHelper = themeHelper
                 }
         }
       }

@@ -33,7 +33,7 @@ class AddPrescriptionViewController: UIViewController {
 
     }
     
-    func updateView() {
+    private func updateView() {
         if prescription != nil {
             self.title = prescriptionNameTextField.text
             addPrescriptionViewController?.title = "\(prescriptionNameTextField.text ?? "Add a new prescription")"
@@ -75,18 +75,18 @@ class AddPrescriptionViewController: UIViewController {
         guard let name = prescriptionNameTextField?.text,
         let dosage = dosageTextField.text,
         let frequency = frequencyTextField.text,
-        let notes = notesTextView.text else { return }
+        let notes = notesTextView.text,
+        name != "" && dosage != "" && frequency != "" && notes != "" else { return }
         
-        if prescription == nil {
-            if let prescriptionController = prescriptionController {
-          prescriptionController.addPrescriptionTapped(with: name, dosage: dosage, frequency: frequency, notes: notes)
+        if let prescriptionController = prescriptionController {
+             prescriptionController.addPrescriptionTapped(with: name, dosage: dosage, frequency: frequency, notes: notes)
 
         } else {
-            prescriptionController?.addPrescriptionTapped(with: name, dosage: dosage, frequency: frequency, notes: notes)
+             prescriptionController?.addPrescriptionTapped(with: name, dosage: dosage, frequency: frequency, notes: notes)
             }
         delegate?.prescriptionWasAdded()
         
         navigationController?.popViewController(animated: true)
     }
   }
-}
+

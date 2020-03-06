@@ -26,6 +26,7 @@ class PrescriptionListTableViewCell: UITableViewCell {
     var prescription: Prescription? {
         didSet {
             prescriptionWasAdded(prescription)
+            updateViews()
         }
     }
     var delegate: PrescriptionListTableViewCellDelegate?
@@ -45,11 +46,17 @@ class PrescriptionListTableViewCell: UITableViewCell {
         prescriptionNameLabel.text = prescription.name
         prescriptionTakenDate.text = "\(dateFormatter.string(from: date))"
         
-        if prescription.taken {
-            prescriptionTakenBox.imageView?.image = UIImage(named: "checked")
-        } else {
-            prescriptionTakenBox.imageView?.image = UIImage(named: "unchecked")
-        }
+        let image = prescription.taken ? UIImage(named: "checked") : UIImage(named: "unchecked")
+        
+        prescriptionTakenBox.setImage(image, for: .normal
+        )
+            
+
+//        if prescription.taken {
+//            prescriptionTakenBox.imageView?.image = UIImage(named: "checked")
+//        } else {
+//            prescriptionTakenBox.imageView?.image = UIImage(named: "unchecked")
+//        }
     }
     
     let date = Date()
