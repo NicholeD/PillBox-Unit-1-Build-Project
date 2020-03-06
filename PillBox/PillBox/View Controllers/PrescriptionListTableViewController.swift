@@ -15,6 +15,7 @@ class PrescriptionListTableViewController: UITableViewController, PrescriptionLi
     
     var prescriptionController: PrescriptionController = PrescriptionController()
     let themeHelper = ThemeHelper()
+    var settingsVC = SettingsViewController()
 
     override func viewDidLoad() {
       super.viewDidLoad()
@@ -22,14 +23,23 @@ class PrescriptionListTableViewController: UITableViewController, PrescriptionLi
 
     }
     // pass into each viewcontroller
-    func setTheme() {
-      guard let themeHelper = themeHelper.themePreference else { return }
-      if themeHelper == "Dark" {
-        view.backgroundColor = .darkGray
-      } else {
-        view.backgroundColor = .none
+  func setTheme() {
+    guard let themeHelper = themeHelper.themePreference else { return }
+    
+      var backgroundColor: UIColor!
+      
+      switch themeHelper {
+      case "Dark":
+          backgroundColor = .black
+          settingsVC.label.textColor = .white
+      default:
+          break
+    }
+     
+      view.backgroundColor = backgroundColor
+     
       }
-  }
+    
     func prescriptionWasAdded() {
         tableView.reloadData()
     }

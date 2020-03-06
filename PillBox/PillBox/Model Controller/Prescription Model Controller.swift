@@ -26,7 +26,7 @@ class PrescriptionController {
         saveToPersistentStore()
     }
     
-    func updateHasBeenTaken(for prescription: Prescription) {
+    func updateHasBeenTaken() {
         
         var taken = false
         switch taken {

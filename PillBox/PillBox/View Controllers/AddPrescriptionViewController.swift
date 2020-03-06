@@ -22,15 +22,16 @@ class AddPrescriptionViewController: UIViewController {
     
     var prescriptionController: PrescriptionController?
     var prescription: Prescription?
+    var settingsVC: SettingsViewController!
     var delegate: PrescriptionAddedDelegate?
     var addPrescriptionViewController: AddPrescriptionViewController?
-    var settingsVC: SettingsViewController!
     var themeHelper: ThemeHelper?
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         updateView()
+        settingsVC.setTheme()
 
     }
     
@@ -48,23 +49,6 @@ class AddPrescriptionViewController: UIViewController {
        self.notesTextView.text = notesString
         
     }
-    
-    func setTheme() {
-        guard let themeHelper = settingsVC.themeHelper?.themePreference else { return }
-     
-     var backgroundColor: UIColor!
-      
-     switch themeHelper {
-     case "Dark":
-       backgroundColor = .black
-       settingsVC.label.textColor = .white
-     default:
-       break
-    }
-     
-     view.backgroundColor = backgroundColor
-     
-     }
     
     @IBAction func toggleAm(_ sender: UISwitch) {
     }

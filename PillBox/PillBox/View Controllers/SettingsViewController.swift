@@ -17,7 +17,7 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
     }
 
-    @IBAction func darkMode(_ sender: UISwitch) {
+    @IBAction func darkMode(_ sender: Any) {
 
         themeHelper?.setThemePreferenceToDark()
         dismiss(animated: true, completion: nil)
