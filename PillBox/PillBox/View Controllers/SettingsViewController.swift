@@ -15,13 +15,7 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
-    
-    //TODO: Userdefaults??
-
-
 
     @IBAction func darkMode(_ sender: UISwitch) {
 
@@ -30,8 +24,6 @@ class SettingsViewController: UIViewController {
     }
     
     var themeHelper: ThemeHelper?
-
-
 
 // pass theme through each segue 
 

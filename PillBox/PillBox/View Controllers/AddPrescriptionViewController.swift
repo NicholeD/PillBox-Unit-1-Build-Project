@@ -26,6 +26,7 @@ class AddPrescriptionViewController: UIViewController {
     var addPrescriptionViewController: AddPrescriptionViewController?
     var settingsVC: SettingsViewController!
     var themeHelper: ThemeHelper?
+
     
     override func viewDidLoad() {
         super.viewDidLoad()

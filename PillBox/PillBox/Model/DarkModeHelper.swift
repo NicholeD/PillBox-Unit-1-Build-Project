@@ -21,7 +21,8 @@ class ThemeHelper {
     init() {
         guard themePreference == nil else { return }
         setThemePreferenceToDark()
-    
+        
+
         }
     
     private let themePreferenceKey = "themePreference"
