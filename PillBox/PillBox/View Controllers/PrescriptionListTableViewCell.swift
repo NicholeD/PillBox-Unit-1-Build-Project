@@ -18,8 +18,11 @@ class PrescriptionListTableViewCell: UITableViewCell {
     @IBOutlet weak var prescriptionTakenDate: UILabel!
     @IBOutlet weak var prescriptionTakenBox: UIButton!
     @IBAction func prescriptionTakenBoxTapped(_ sender: Any) {
-        prescriptionController?.updateHasBeenTaken()
-        delegate?.toggleHasBeenTaken(for: self)
+//        prescriptionController?.updateHasBeenTaken()
+//        delegate?.toggleHasBeenTaken(for: self)
+        prescription.taken.toggle()
+        updateViews()
+        prescriptionController?.saveToPersistentStore()
     }
     
     var prescriptionController: PrescriptionController?
@@ -30,10 +33,6 @@ class PrescriptionListTableViewCell: UITableViewCell {
         }
     }
     var delegate: PrescriptionListTableViewCellDelegate?
-    
-    func viewDidLoad() {
-        updateViews()      
-    }
     
     func prescriptionWasAdded(_ prescription: Prescription?) {
         updateViews()

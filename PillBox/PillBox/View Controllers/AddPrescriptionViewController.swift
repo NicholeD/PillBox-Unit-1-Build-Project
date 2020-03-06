@@ -31,23 +31,19 @@ class AddPrescriptionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateView()
-        settingsVC.setTheme()
+//        settingsVC.setTheme()
 
     }
     
     private func updateView() {
-        if prescription != nil {
-            self.title = prescriptionNameTextField.text
-            addPrescriptionViewController?.title = "\(prescriptionNameTextField.text ?? "Add a new prescription")"
+        if let prescription = prescription {
+            prescriptionNameTextField.text = prescription.name
+            dosageTextField.text = prescription.dosage
+            frequencyTextField.text = prescription.frequency
+            notesTextView.text = prescription.notes
+            toggleAmSwitch.isOn = prescription.am ?? false
+            togglePmSwitch.isOn = prescription.pm ?? false
         }
-
-       let dosageString = String(dosageTextField.text ?? "")
-       self.dosageTextField.text = dosageString
-       let frequencyString = String(frequencyTextField.text ?? "")
-       self.frequencyTextField.text = frequencyString
-       let notesString = String(notesTextView.text ?? "")
-       self.notesTextView.text = notesString
-        
     }
     
     @IBAction func toggleAm(_ sender: UISwitch) {
