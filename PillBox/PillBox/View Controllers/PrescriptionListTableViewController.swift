@@ -14,29 +14,9 @@ class PrescriptionListTableViewController: UITableViewController, PrescriptionLi
     @IBOutlet var prescriptionTableView: UITableView!
     
     var prescriptionController: PrescriptionController = PrescriptionController()
-    let themeHelper = ThemeHelper()
-    var settingsVC = SettingsViewController()
-    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
-        setTheme()
-        
-    }
-    // pass into each viewcontroller
-    func setTheme() {
-        guard let themeHelper = themeHelper.themePreference else { return }
-        
-        var backgroundColor: UIColor!
-        
-        switch themeHelper {
-        case "Dark":
-            backgroundColor = .black
-        //          settingsVC.label.textColor = .white
-        default:
-            break
-        }
-        
-        view.backgroundColor = backgroundColor
         
     }
     
@@ -77,22 +57,16 @@ class PrescriptionListTableViewController: UITableViewController, PrescriptionLi
             guard let viewPrescriptionVC = segue.destination as? AddPrescriptionViewController else { return }
             viewPrescriptionVC.prescriptionController = prescriptionController
             viewPrescriptionVC.delegate = self
-            viewPrescriptionVC.themeHelper = themeHelper
         } else {
             if segue.identifier == "PrescriptionDetailSegue" {
                 guard let viewPrescriptionDetailVC = segue.destination as? AddPrescriptionViewController else { return }
-                viewPrescriptionDetailVC.prescriptionController = prescriptionController
-                viewPrescriptionDetailVC.themeHelper = themeHelper
                 if let indexPath = tableView.indexPathForSelectedRow {
                     let prescription = prescriptionController.prescriptions[indexPath.row]
                     viewPrescriptionDetailVC.prescription = prescription
+                    viewPrescriptionDetailVC.prescriptionController = prescriptionController
+                    viewPrescriptionDetailVC.delegate = self
                 }
-            } else {
-                if segue.identifier == "SelectTheme" {
-                    guard let destinationVC = segue.destination as? SettingsViewController else { return }
-                    destinationVC.themeHelper = themeHelper
-                }
-            }
+            } 
         }
     }
 }

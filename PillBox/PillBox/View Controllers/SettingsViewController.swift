@@ -11,16 +11,29 @@ import UIKit
 class SettingsViewController: UIViewController {
     
     @IBOutlet weak var label: UILabel!
-       @IBOutlet weak var outletSwitch: UISwitch!
-    
+    @IBOutlet weak var outletSwitch: UISwitch!
+    @IBOutlet weak var saveButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        prescriptionController.loadFromPersistentStore()
+        setTheme()
     }
+    
+    var prescriptionController = PrescriptionController()
 
     @IBAction func darkMode(_ sender: Any) {
+        
+        themeHelper?.themeSelected.toggle()
 
         themeHelper?.setThemePreferenceToDark()
+        setTheme()
+       
+    }
+    
+    @IBAction func saveTapped(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+        prescriptionController.saveToPersistentStore()
+        setTheme()
     }
     
     var themeHelper: ThemeHelper?

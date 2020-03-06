@@ -12,27 +12,24 @@ protocol PrescriptionAddedDelegate {
 }
 
 class AddPrescriptionViewController: UIViewController {
-
+    
     @IBOutlet weak var prescriptionNameTextField: UITextField!
     @IBOutlet weak var dosageTextField: UITextField!
     @IBOutlet weak var frequencyTextField: UITextField!
     @IBOutlet weak var toggleAmSwitch: UISwitch!
     @IBOutlet weak var togglePmSwitch: UISwitch!
     @IBOutlet weak var notesTextView: UITextView!
+    @IBOutlet weak var savePrescription: UIButton!
     
     var prescriptionController: PrescriptionController?
     var prescription: Prescription?
-    var settingsVC: SettingsViewController!
     var delegate: PrescriptionAddedDelegate?
     var addPrescriptionViewController: AddPrescriptionViewController?
-    var themeHelper: ThemeHelper?
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
         updateView()
-//        settingsVC.setTheme()
-
+        
     }
     
     private func updateView() {
@@ -54,20 +51,26 @@ class AddPrescriptionViewController: UIViewController {
     
     @IBAction func addPrescriptionTapped(_ sender: Any) {
         guard let name = prescriptionNameTextField?.text,
-        let dosage = dosageTextField.text,
-        let frequency = frequencyTextField.text,
-        let notes = notesTextView.text,
-        name != "" && dosage != "" && frequency != "" && notes != "" else { return }
+            name != "" else { return }
         
         if let prescriptionController = prescriptionController {
-             prescriptionController.addPrescriptionTapped(with: name, dosage: dosage, frequency: frequency, notes: notes)
-
-        } else {
-             prescriptionController?.addPrescriptionTapped(with: name, dosage: dosage, frequency: frequency, notes: notes)
+            
+            if let prescription = prescription {
+                prescription.name = prescriptionNameTextField.text ?? ""
+                prescription.dosage = dosageTextField.text ?? ""
+                prescription.frequency = frequencyTextField.text ?? ""
+                prescription.notes = notesTextView.text
+                prescription.am = toggleAmSwitch.isOn
+                prescription.pm = togglePmSwitch.isOn
+                prescriptionController.saveToPersistentStore()
+            } else{
+                prescriptionController.addPrescriptionTapped(with: name, dosage: dosageTextField.text ?? "", frequency: frequencyTextField.text ?? "", notes: notesTextView.text)
             }
+        }
+        
         delegate?.prescriptionWasAdded()
         
         navigationController?.popViewController(animated: true)
     }
-  }
+}
 

@@ -7,116 +7,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Settings-->
-        <scene sceneID="H4o-Si-MtP">
-            <objects>
-                <viewController id="DQP-Ea-raw" customClass="SettingsViewController" customModule="PillBox" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="90W-ur-9Ir">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="76" translatesAutoresizingMaskIntoConstraints="NO" id="u5N-Km-wBK">
-                                <rect key="frame" x="78.5" y="405.5" width="257" height="31"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dark Mode " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1z9-7T-fO3">
-                                        <rect key="frame" x="0.0" y="0.0" width="132" height="31"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="RGi-Cu-ymF">
-                                        <rect key="frame" x="208" y="0.0" width="51" height="31"/>
-                                        <color key="thumbTintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <connections>
-                                            <action selector="darkMode:" destination="DQP-Ea-raw" eventType="valueChanged" id="XLm-I1-RDQ"/>
-                                        </connections>
-                                    </switch>
-                                </subviews>
-                            </stackView>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="u5N-Km-wBK" firstAttribute="centerY" secondItem="90W-ur-9Ir" secondAttribute="centerY" id="XA3-Xa-4cY"/>
-                            <constraint firstItem="u5N-Km-wBK" firstAttribute="centerX" secondItem="90W-ur-9Ir" secondAttribute="centerX" id="mOw-4h-d2H"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="5hf-2X-AVV"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Settings" id="u8w-D9-Xgf"/>
-                    <connections>
-                        <outlet property="label" destination="1z9-7T-fO3" id="sWy-8s-aKY"/>
-                        <outlet property="outletSwitch" destination="RGi-Cu-ymF" id="I01-xH-zZD"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NgJ-h1-4mD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2384.057971014493" y="-290.625"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="u74-Mc-ECO">
-            <objects>
-                <viewController id="vR2-p9-COb" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="nyA-7f-NT1">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="dhD-yH-xRx">
-                                <rect key="frame" x="47" y="340" width="320" height="216"/>
-                            </datePicker>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set your alarm here! " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z34-ng-DtR">
-                                <rect key="frame" x="0.0" y="262" width="414" height="98"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="98" id="eZh-OJ-uZK"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Rockwell-Bold" family="Rockwell" pointSize="34"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mvV-W8-87U">
-                                <rect key="frame" x="131" y="564" width="152" height="52"/>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="27"/>
-                                <state key="normal" title="Add Alert"/>
-                            </button>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ygv-sp-IlW">
-                                <rect key="frame" x="0.0" y="58" width="414" height="44"/>
-                                <items>
-                                    <navigationItem id="7rb-Wn-LjT">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="tqY-4z-Zo6"/>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="H9b-p9-jBz">
-                                <rect key="frame" x="299" y="102.5" width="95" height="85"/>
-                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="86" id="D2Q-lY-yTP"/>
-                                </constraints>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="dhD-yH-xRx" firstAttribute="centerX" secondItem="nyA-7f-NT1" secondAttribute="centerX" id="4b1-1Q-1t6"/>
-                            <constraint firstItem="Z34-ng-DtR" firstAttribute="trailing" secondItem="Ygv-sp-IlW" secondAttribute="trailing" id="7Tu-dj-kKP"/>
-                            <constraint firstItem="Z34-ng-DtR" firstAttribute="top" secondItem="H9b-p9-jBz" secondAttribute="bottom" constant="74" id="EFb-50-hOK"/>
-                            <constraint firstItem="dhD-yH-xRx" firstAttribute="centerY" secondItem="nyA-7f-NT1" secondAttribute="centerY" id="J5s-Qi-xsi"/>
-                            <constraint firstItem="H9b-p9-jBz" firstAttribute="leading" secondItem="Dd5-Fm-YLB" secondAttribute="leading" constant="299" id="Lmt-aR-CPB"/>
-                            <constraint firstItem="Z34-ng-DtR" firstAttribute="centerX" secondItem="dhD-yH-xRx" secondAttribute="centerX" id="NmV-7U-998"/>
-                            <constraint firstItem="H9b-p9-jBz" firstAttribute="trailing" secondItem="nyA-7f-NT1" secondAttribute="trailingMargin" id="Xvd-kI-A7n"/>
-                            <constraint firstItem="H9b-p9-jBz" firstAttribute="top" secondItem="nyA-7f-NT1" secondAttribute="top" constant="102" id="bCo-YP-wD9"/>
-                            <constraint firstItem="Z34-ng-DtR" firstAttribute="leading" secondItem="nyA-7f-NT1" secondAttribute="leading" id="bEu-A6-ebR"/>
-                            <constraint firstItem="mvV-W8-87U" firstAttribute="top" secondItem="dhD-yH-xRx" secondAttribute="bottom" constant="8" id="lwv-OF-k2p"/>
-                            <constraint firstItem="Z34-ng-DtR" firstAttribute="leading" secondItem="Ygv-sp-IlW" secondAttribute="leading" id="m30-6R-EMh"/>
-                            <constraint firstItem="H9b-p9-jBz" firstAttribute="top" secondItem="Ygv-sp-IlW" secondAttribute="bottom" id="ng6-1w-2vB"/>
-                            <constraint firstItem="Dd5-Fm-YLB" firstAttribute="bottom" secondItem="mvV-W8-87U" secondAttribute="bottom" constant="246" id="t1t-d2-0xl"/>
-                            <constraint firstItem="Dd5-Fm-YLB" firstAttribute="trailing" secondItem="mvV-W8-87U" secondAttribute="trailing" constant="131" id="wfU-6E-cit"/>
-                            <constraint firstItem="mvV-W8-87U" firstAttribute="leading" secondItem="Dd5-Fm-YLB" secondAttribute="leading" constant="131" id="xj6-uY-mSI"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="Dd5-Fm-YLB"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tdd-LZ-KAa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3215.9420289855075" y="-291.29464285714283"/>
-        </scene>
         <!--Add Prescription-->
         <scene sceneID="9XB-e9-sTe">
             <objects>
@@ -251,18 +141,19 @@
                         <outlet property="frequencyTextField" destination="5ed-93-Aeh" id="Cfy-GS-r0c"/>
                         <outlet property="notesTextView" destination="bG9-yh-rAS" id="aQY-aF-PvO"/>
                         <outlet property="prescriptionNameTextField" destination="cub-AJ-SJX" id="pV5-iE-WsI"/>
+                        <outlet property="savePrescription" destination="l2b-l2-0vq" id="hLT-SC-jJ0"/>
                         <outlet property="toggleAmSwitch" destination="4WK-CX-Vv0" id="TFV-tD-a1q"/>
                         <outlet property="togglePmSwitch" destination="l6I-tc-Fzq" id="hey-e3-h2S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FrW-tW-lWk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2467" y="378"/>
+            <point key="canvasLocation" x="2407" y="61"/>
         </scene>
         <!--Prescription List Table View Controller-->
         <scene sceneID="8pW-DT-nFI">
             <objects>
-                <tableViewController id="Izj-7b-dS0" customClass="PrescriptionListTableViewController" customModule="PillBox" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController interfaceStyle="light" id="Izj-7b-dS0" customClass="PrescriptionListTableViewController" customModule="PillBox" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="QO7-Ck-EH0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -333,11 +224,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="bh3-6b-uke">
-                        <barButtonItem key="leftBarButtonItem" image="gear" catalog="system" id="oct-7h-rgQ">
-                            <connections>
-                                <segue destination="DQP-Ea-raw" kind="presentation" identifier="SettingsSegue" id="Zg7-bd-f7q"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Z6o-qE-Osc">
                             <connections>
                                 <segue destination="3fb-4T-p2M" kind="show" identifier="AddPrescriptionSegue" id="Swl-0n-3Lk"/>
@@ -372,8 +258,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="clock.fill" catalog="system" width="64" height="60"/>
-        <image name="gear" catalog="system" width="64" height="58"/>
         <image name="unchecked" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
