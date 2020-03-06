@@ -21,12 +21,32 @@ class AddPrescriptionViewController: UIViewController {
     @IBOutlet weak var notesTextView: UITextView!
     
     var prescriptionController: PrescriptionController?
+    var prescription: Prescription?
     var delegate: PrescriptionAddedDelegate?
+    var addPrescriptionViewController: AddPrescriptionViewController?
     var settingsVC: SettingsViewController!
+    var themeHelper: ThemeHelper?
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateView()
 
+    }
+    
+    private func updateView() {
+        if prescription != nil {
+            self.title = prescriptionNameTextField.text
+            addPrescriptionViewController?.title = "\(prescriptionNameTextField.text ?? "Add a new prescription")"
+        }
+
+       let dosageString = String(dosageTextField.text ?? "")
+       self.dosageTextField.text = dosageString
+       let frequencyString = String(frequencyTextField.text ?? "")
+       self.frequencyTextField.text = frequencyString
+       let notesString = String(notesTextView.text ?? "")
+       self.notesTextView.text = notesString
+        
     }
     
     func setTheme() {
@@ -46,8 +66,6 @@ class AddPrescriptionViewController: UIViewController {
      
      }
     
-      // Toggle action will show in the alert or in the prescription detail view... not sure yet
-    
     @IBAction func toggleAm(_ sender: UISwitch) {
     }
     
@@ -55,15 +73,21 @@ class AddPrescriptionViewController: UIViewController {
     }
     
     @IBAction func addPrescriptionTapped(_ sender: Any) {
-        guard let name = prescriptionNameTextField.text,
-            let dosage = dosageTextField.text,
-            let frequency = frequencyTextField.text,
-            let notes = notesTextView.text else { return }
+        guard let name = prescriptionNameTextField?.text,
+        let dosage = dosageTextField.text,
+        let frequency = frequencyTextField.text,
+        let notes = notesTextView.text,
+        name != "" && dosage != "" && frequency != "" && notes != "" else { return }
         
-        prescriptionController?.addPrescriptionTapped(with: name, dosage: dosage, frequency: frequency, notes: notes)
-        
+        if let prescriptionController = prescriptionController {
+             prescriptionController.addPrescriptionTapped(with: name, dosage: dosage, frequency: frequency, notes: notes)
+
+        } else {
+             prescriptionController?.addPrescriptionTapped(with: name, dosage: dosage, frequency: frequency, notes: notes)
+            }
         delegate?.prescriptionWasAdded()
         
         navigationController?.popViewController(animated: true)
     }
-}
+  }
+

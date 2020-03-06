@@ -28,12 +28,12 @@ class PrescriptionController {
     
     func updateHasBeenTaken(for prescription: Prescription) {
         
-        var hasBeenTaken = false
-        switch hasBeenTaken {
+        var taken = false
+        switch taken {
         case true:
-            hasBeenTaken.toggle()
+            taken.toggle()
         default:
-            hasBeenTaken.toggle()
+            taken.toggle()
         }
         saveToPersistentStore()
     }

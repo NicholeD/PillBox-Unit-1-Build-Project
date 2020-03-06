@@ -18,20 +18,21 @@ class PrescriptionListTableViewCell: UITableViewCell {
     @IBOutlet weak var prescriptionTakenDate: UILabel!
     @IBOutlet weak var prescriptionTakenBox: UIButton!
     @IBAction func prescriptionTakenBoxTapped(_ sender: Any) {
+        prescriptionController?.updateHasBeenTaken(for: prescription)
         delegate?.toggleHasBeenTaken(for: self)
     }
     
     var prescriptionController: PrescriptionController?
-    var prescription: Prescription? {
+    var prescription: Prescription! {
         didSet {
             prescriptionWasAdded(prescription)
+            updateViews()
         }
     }
     var delegate: PrescriptionListTableViewCellDelegate?
     
     func viewDidLoad() {
-        updateViews()
-      
+        updateViews()      
     }
     
     func prescriptionWasAdded(_ prescription: Prescription?) {
@@ -44,11 +45,17 @@ class PrescriptionListTableViewCell: UITableViewCell {
         prescriptionNameLabel.text = prescription.name
         prescriptionTakenDate.text = "\(dateFormatter.string(from: date))"
         
-        if prescription.taken {
-            prescriptionTakenBox.imageView?.image = UIImage(named: "checked")
-        } else {
-            prescriptionTakenBox.imageView?.image = UIImage(named: "unchecked")
-        }
+        let image = prescription.taken ? UIImage(named: "checked") : UIImage(named: "unchecked")
+        
+        prescriptionTakenBox.setImage(image, for: .normal
+        )
+            
+
+//        if prescription.taken {
+//            prescriptionTakenBox.imageView?.image = UIImage(named: "checked")
+//        } else {
+//            prescriptionTakenBox.imageView?.image = UIImage(named: "unchecked")
+//        }
     }
     
     let date = Date()
