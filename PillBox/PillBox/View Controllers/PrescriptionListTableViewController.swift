@@ -39,13 +39,11 @@ class PrescriptionListTableViewController: UITableViewController, PrescriptionLi
 
         let takenPrescription = prescriptionController.prescriptions[indexPath.row]
         takenPrescription.taken.toggle()
-//        prescriptionController.prescriptions.append(takenPrescription)
         prescriptionController.updateHasBeenTaken()
         tableView.reloadData()
 }
   
-    
-    // MARK: - Table view data source
+    // MARK: - TableView data source
        
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
                return prescriptionController.prescriptions.count
@@ -62,22 +60,24 @@ class PrescriptionListTableViewController: UITableViewController, PrescriptionLi
            }
     
     // MARK: - Navigation
+    
       override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
           if segue.identifier == "AddPrescriptionSegue" {
               guard let viewPrescriptionVC = segue.destination as? AddPrescriptionViewController else { return }
-            viewPrescriptionVC.prescriptionController = prescriptionController
-            viewPrescriptionVC.delegate = self
-            viewPrescriptionVC.themeHelper = themeHelper
+               viewPrescriptionVC.prescriptionController = prescriptionController
+               viewPrescriptionVC.delegate = self
+               viewPrescriptionVC.setTheme()
           } else {
         if segue.identifier == "PrescriptionDetailSegue" {
             guard let viewPrescriptionDetailVC = segue.destination as? AddPrescriptionViewController else { return }
-            viewPrescriptionDetailVC.prescriptionController = prescriptionController
-            viewPrescriptionDetailVC.addPrescriptionTapped(Prescription.self)
+               viewPrescriptionDetailVC.prescriptionController = prescriptionController
+               viewPrescriptionDetailVC.addPrescriptionTapped(Prescription.self)
+            viewPrescriptionDetailVC.setTheme()
             
           } else {
         if segue.identifier == "SelectTheme" {
             guard let destinationVC = segue.destination as? SettingsViewController else { return }
-            destinationVC.themeHelper = themeHelper
+               destinationVC.setTheme()
                 }
         }
       }

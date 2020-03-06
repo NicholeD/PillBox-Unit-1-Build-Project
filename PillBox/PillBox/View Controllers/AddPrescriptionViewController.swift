@@ -65,8 +65,6 @@ class AddPrescriptionViewController: UIViewController {
      
      }
     
-      // Toggle action will show in the alert or in the prescription detail view... not sure yet
-    
     @IBAction func toggleAm(_ sender: UISwitch) {
     }
     
