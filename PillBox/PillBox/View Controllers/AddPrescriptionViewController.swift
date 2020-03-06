@@ -59,6 +59,8 @@ class AddPrescriptionViewController: UIViewController {
        backgroundColor = .black
        settingsVC.label.textColor = .white
      default:
+        backgroundColor = .white
+        settingsVC.label.textColor = .black
        break
     }
      

@@ -61,8 +61,8 @@
 		15322B3A240EC31400F1E27A /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				152E6400240F184E00210D0A /* PrescriptionListTableViewController.swift */,
 				15322B3E240EC31400F1E27A /* AddPrescriptionViewController.swift */,
+				152E6400240F184E00210D0A /* PrescriptionListTableViewController.swift */,
 				15AA6498240F664500344B5E /* SettingsViewController.swift */,
 				15803F1C240F1FE900619169 /* PrescriptionListTableViewCell.swift */,
 			);

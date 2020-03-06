@@ -37,6 +37,8 @@ func setTheme() {
         backgroundColor = .black
         label.textColor = .white
     default:
+        backgroundColor = .white
+        label.textColor = .black
         break
   }
    
