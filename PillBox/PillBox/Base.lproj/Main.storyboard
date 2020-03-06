@@ -297,8 +297,7 @@
                                             </constraints>
                                             <state key="normal" title="Button" image="unchecked"/>
                                             <connections>
-                                                <action selector="prescriptionTakenBox:" destination="swJ-sO-0w0" eventType="touchUpInside" id="gyX-Kk-D9d"/>
-                                                <action selector="prescriptionTakenBoxTapped:" destination="swJ-sO-0w0" eventType="touchUpInside" id="zgz-h0-MYJ"/>
+                                                <action selector="prescriptionTakenBoxTapped:" destination="swJ-sO-0w0" eventType="touchUpInside" id="5SU-sQ-zZU"/>
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bs1-hg-stX">
@@ -310,7 +309,6 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="tl6-Ax-aUd" firstAttribute="top" secondItem="DoO-IB-6mV" secondAttribute="top" constant="8" id="Izk-OC-Xf5"/>
-                                        <constraint firstItem="gma-hD-bCp" firstAttribute="top" secondItem="DoO-IB-6mV" secondAttribute="top" constant="34" id="WwE-jR-Xwa"/>
                                         <constraint firstItem="Bs1-hg-stX" firstAttribute="bottom" secondItem="DoO-IB-6mV" secondAttribute="bottomMargin" id="Xxl-c7-gU0"/>
                                         <constraint firstAttribute="trailing" secondItem="tl6-Ax-aUd" secondAttribute="trailing" constant="20" id="cK6-ZS-U3O"/>
                                         <constraint firstItem="Bs1-hg-stX" firstAttribute="top" secondItem="tl6-Ax-aUd" secondAttribute="bottom" constant="16.5" id="fgl-6L-dFX"/>
@@ -348,7 +346,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="prescriptionTableView" destination="QO7-Ck-EH0" id="s56-zo-e4A"/>
-                        <outlet property="tableView" destination="QO7-Ck-EH0" id="PKF-ES-5Hs"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vwa-Xv-BxW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
