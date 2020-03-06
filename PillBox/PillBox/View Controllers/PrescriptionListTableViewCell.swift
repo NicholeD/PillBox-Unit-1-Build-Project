@@ -18,12 +18,12 @@ class PrescriptionListTableViewCell: UITableViewCell {
     @IBOutlet weak var prescriptionTakenDate: UILabel!
     @IBOutlet weak var prescriptionTakenBox: UIButton!
     @IBAction func prescriptionTakenBoxTapped(_ sender: Any) {
-        prescriptionController?.updateHasBeenTaken()
+        prescriptionController?.updateHasBeenTaken(for: prescription)
         delegate?.toggleHasBeenTaken(for: self)
     }
     
     var prescriptionController: PrescriptionController?
-    var prescription: Prescription? {
+    var prescription: Prescription! {
         didSet {
             prescriptionWasAdded(prescription)
             updateViews()
@@ -32,8 +32,7 @@ class PrescriptionListTableViewCell: UITableViewCell {
     var delegate: PrescriptionListTableViewCellDelegate?
     
     func viewDidLoad() {
-        updateViews()
-      
+        updateViews()      
     }
     
     func prescriptionWasAdded(_ prescription: Prescription?) {
