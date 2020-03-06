@@ -289,31 +289,26 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gma-hD-bCp">
-                                            <rect key="frame" x="300" y="34" width="39" height="39"/>
-                                            <state key="normal" image="unchecked"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gma-hD-bCp">
+                                            <rect key="frame" x="300" y="34" width="35" height="35"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="35" id="ChH-yZ-MNw"/>
+                                                <constraint firstAttribute="height" constant="35" id="fm3-2a-nUc"/>
+                                            </constraints>
+                                            <state key="normal" title="Button" image="unchecked"/>
                                             <connections>
-<<<<<<< HEAD
                                                 <action selector="prescriptionTakenBoxTapped:" destination="swJ-sO-0w0" eventType="touchUpInside" id="5SU-sQ-zZU"/>
-=======
-                                                <action selector="prescriptionTakenBoxTapped:" destination="swJ-sO-0w0" eventType="touchUpInside" id="zgz-h0-MYJ"/>
->>>>>>> 061a0b659fcf256989b8c9fffdb2cfa95fc67d05
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bs1-hg-stX">
-                                            <rect key="frame" x="20" y="49" width="272" height="20"/>
+                                            <rect key="frame" x="20" y="49" width="36" height="20"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="gma-hD-bCp" firstAttribute="leading" secondItem="Bs1-hg-stX" secondAttribute="trailing" constant="8" id="5r1-qD-iPO"/>
                                         <constraint firstItem="tl6-Ax-aUd" firstAttribute="top" secondItem="DoO-IB-6mV" secondAttribute="top" constant="8" id="Izk-OC-Xf5"/>
-<<<<<<< HEAD
-=======
-                                        <constraint firstItem="gma-hD-bCp" firstAttribute="top" relation="greaterThanOrEqual" secondItem="DoO-IB-6mV" secondAttribute="top" constant="34" id="WwE-jR-Xwa"/>
->>>>>>> 061a0b659fcf256989b8c9fffdb2cfa95fc67d05
                                         <constraint firstItem="Bs1-hg-stX" firstAttribute="bottom" secondItem="DoO-IB-6mV" secondAttribute="bottomMargin" id="Xxl-c7-gU0"/>
                                         <constraint firstAttribute="trailing" secondItem="tl6-Ax-aUd" secondAttribute="trailing" constant="20" id="cK6-ZS-U3O"/>
                                         <constraint firstItem="Bs1-hg-stX" firstAttribute="top" secondItem="tl6-Ax-aUd" secondAttribute="bottom" constant="16.5" id="fgl-6L-dFX"/>
@@ -326,7 +321,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="prescriptionNameLabel" destination="tl6-Ax-aUd" id="mgW-RW-hLU"/>
-                                    <outlet property="prescriptionTakenBox" destination="gma-hD-bCp" id="tdB-Jq-gAX"/>
+                                    <outlet property="prescriptionTakenBox" destination="gma-hD-bCp" id="YNc-Cx-kuR"/>
                                     <outlet property="prescriptionTakenDate" destination="Bs1-hg-stX" id="No1-84-Gjv"/>
                                     <segue destination="3fb-4T-p2M" kind="show" identifier="PrescriptionDetailSegue" id="eTd-d9-glQ"/>
                                 </connections>
